@@ -1,0 +1,87 @@
+header {
+  background-color: rgb(208, 226, 239);
+  text-align: center;
+  padding-bottom: 10px;
+  padding-top: 5px;
+  margin-top: 5px;
+}
+
+
+body {
+  font-family: "Roboto Mono", monospace;
+}
+
+.intro {
+  text-align: center;
+}
+
+body {
+  width: 600px;
+  margin: 0 auto;
+  padding: 0px 20px 20px 20px;
+}
+
+/*
+#logo {
+  border-radius: 10%;
+  width: 250px;
+}
+*/
+
+blockquote {
+  margin: 0;
+}
+
+blockquote p {
+  padding: 15px;
+  background: #eee;
+  border-radius: 5px;
+}
+
+blockquote p::before {
+  content: '\201C';
+}
+
+blockquote p::after {
+  content: '\201D';
+}
+
+.standard-pic {
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+  height: auto;
+}
+
+.screenshot {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+}
+
+.entry {
+  text-align: center;
+  border: thick solid deeppink;
+  padding: 0px 20px 20px 20px;
+  margin-top: 50px;
+}
+
+.TIL,
+h3 {
+  text-align: center;
+}
+
+.TIL {
+  text-align: left;
+  border: thick solid deeppink;
+  padding: 0px 20px 20px 20px;
+  margin-top: 50px;
+}
+
+pre code {
+  background-color: #eee;
+  border: 1px solid #999;
+  display: block;
+  padding: 10px;
+}

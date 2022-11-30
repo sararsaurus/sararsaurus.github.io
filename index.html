@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles/style.css" rel="stylesheet">
+  <title>Sara Raley</title>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <h1 class="title">Sara Raley</h1>
+    <img class="standard-pic" src="images/IMG_7964.jpeg" alt="a sunrise trail run">
+    <p class="intro">exploring in and out of doors </p>
+  </header>
+
+  <figure>
+    <blockquote>
+      <p>Don't panic.</p>
+    </blockquote>
+    <figcaption><cite>Hitchhiker's Guide to the Galaxy</cite></figcaption>
+  </figure>
+
+  <div id="ProgressBar">
+    <h3>Projects</h3>
+    <label>Web scraping app:</label>
+    <progress value="10" max="100"> 10% </progress>
+    <br>
+    <label>Terminal news/fun facts app:</label>
+    <progress value="100" max="100"> 100% </progress>
+    <br>
+    <label>Full-stack news app:</label>
+    <progress value="10" max="100"> 10% </progress>
+  </div>
+
+  <div id="Dec0422" class="TIL">
+    <h3>weekly roundup <br>4 dec 2022</h3>
+    <h4 id="readings">readings/listenings</h4>
+    <ul>
+      <li></li>
+    </ul>
+
+    <h4 id="craftings">craftings</h4>
+    <ul>
+      <li>Made a cute little terminal app! It uses a number of tty gems for &#10024;beautification&#10024; and a few
+        different free APIs
+        to generate the data.
+        <a href="https://github.com/sararsaurus/terminal-api-apps" target="_blank">Check it out on
+          GitHub.</a>
+      </li>
+      <br>
+      <img class="screenshot" src="images/Screenshot 2022-11-29 at 2.41.27 PM.png">
+      <br>
+      <li>Tried to build a simple <a href="https://www.scrapingbee.com/blog/web-scraping-ruby/" target="_blank">web
+          scraper</a> in Ruby. Scraping is kind of tricky: it requires the relevant gem
+        installs, familiarity with the DOM, logic to search through selectors, and some way to export it - before even
+        tackling a dynamic page. I was able to scrape bits off a Wikipedia page and export those to a CSV file. </li>
+    </ul>
+
+    <h4 id="learnings">learnings</h4>
+    <ul>
+      <li></li>
+      <br>
+    </ul>
+
+  </div>
+
+
+
+  <div id="Nov2722" class="TIL">
+    <h3>weekly roundup <br>27 nov 2022</h3>
+    <h4 id="readings">readings/listenings</h4>
+    <ul>
+      <li><a href="https://www.quickanddirtytips.com/articles/what-does-zhuzh-mean-and-why-is-it-so-hard-to-spell/"
+          target="_blank">What Does 'Zhuzh' Mean (and Why Is It So Hard to Spell)?</a></li>
+    </ul>
+
+    <h4 id="craftings">craftings</h4>
+    <ul>
+      <li>covid week &#129409;</li>
+    </ul>
+
+    <h4 id="learnings">learnings</h4>
+    <ul>
+      <li>I internalized the value of testing code in the rails console! It was how I figured out what exactly we were
+        trying to do in the whole MVC structure, and testing it earlier was a lot less cumbersome than finding errors
+        later. We'd swiftly find out if our model associations weren't quite right, without having to suffer through
+        making the controller attempt to generate a view.</li>
+      <br>
+      <li>Tackled a team project this week! Finding the right team rhythm is just as important as figuring out the code.
+        We improved our ability to successfully implement Git branches and pulls and we found good resources that helped
+        us with
+        parts of the problem that were beyond our current skillset. In the future we'd spend more time conceptutalizing
+        the project as a whole before diving in.</li>
+    </ul>
+
+  </div>
+
+
+
+  <div id="Nov2022" class="TIL">
+    <h3>weekly roundup <br>20 nov 2022</h3>
+
+    <h4 id="readings">readings/listenings</h4>
+    <ul>
+      <li><a href="https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/"
+          target="_blank">The Untold Story of NotPetya, the Most Devastating Cyberattack in History</a></li>
+      <li><a href="https://www.womensrunning.com/training/cross-training/glute-workout-for-runners/" target="_blank">A
+          Bum Burner Workout for Runners</a></li>
+      <li><a href="https://www.theringer.com/soccer/2022/11/15/23460575/2022-world-cup-dark-horse" target="_blank">Where
+          Will the World Cup Dark Horses Come From?</a></li>
+    </ul>
+
+    <h4 id="craftings">craftings</h4>
+    <ul>
+      <li>Finally braved (hand-)washing the dragon. Almost ready to ship!</li>
+      <img class="standard-pic" src="images/IMG_0865.jpeg" alt="A crochet project drying">
+      <br>
+      <li>Made some sourdough with just the right amount of help from my sous chef. </li>
+      <img class="standard-pic" src="images/IMG_0866.jpeg" alt="A dog looks at a loaf of bread">
+    </ul>
+
+    <h4 id="learnings">learnings</h4>
+    <ul>
+      <li> Carefully creating sessions and tokens when building your app is key to preventing
+        Cross-Site Request Forgery (CSRF) attacks. Input sanitization, particularly the removal of necessary coding
+        characters and dangerous keywords, is important to defending against Cross-Site Scripting (XSS).</li>
+      <br>
+      <li>Getting at the key of a hash is tricky, but Ruby's <a href="https://www.rubyguides.com/ruby-tutorial/loops/"
+          target="_blank">each method</a> helpfully offers an easy way to access it in a loop!</li>
+      <pre>
+            <code>
+              items = { "chair" => 100, "book" => 14 }
+              hash = {}
+              items.each do |name, price|
+              hash[name] = price
+              end
+              p hash
+              # {"chair"=>100, "book"=>14}
+            </code>
+          </pre>
+
+      <li>Best practices for PTT radio use: No Hollywood lingo! Listen first before transmitting,
+        rehearse what you're going to say, depress the talk switch for 1-2 seconds before talking, and release the
+        button when you're done.
+      </li>
+      <br>
+      <li>Found a news API! I bet that's what most "good news" apps are using. I also signed up to be a beta tester
+        for
+        a new tech news aggregator and I'll be curious to see whether it uses a similar API.</li>
+    </ul>
+  </div>
+
+  <div id="Nov1322" class="TIL">
+    <h3>weekly roundup <br>13 nov 2022</h3>
+
+    <h4 id="readings">readings/listenings</h4>
+    <ul>
+      <li><a href="https://bluebirdbackcountry.com/the-uptrack/getting-in-shape-for-ski-season/" target="_blank">Getting
+          in Shape for Ski Season</a></li>
+      <li><a href="https://pca.st/riskybiz" target="_blank">Risky Business's weekly information security podcast</a>
+      </li>
+    </ul>
+
+    <h4 id="craftings">craftings</h4>
+    <ul>
+      <li>Reinforced the stitches connecting my dragon legs to the body. In the future I will <em>always</em> leave a
+        longer
+        tail on anything that will need to be sewed on later.</li>
+    </ul>
+
+    <h4 id="learnings">learnings</h4>
+    <ul>
+      <li>Gaia now has OpenSnow data! And it's as easy as tapping anywhere on the map to get the current weather info:
+        <a href="https://blog.gaiagps.com/opensnow-weather-forecasts-at-a-tap/" target="_blank">OpenSnow Weather Now
+          Available at-a-Tap on the Map</a>. Also, I got tired of Gaia opening to a random map, so I bookmarked the
+        relevant url for where I want it to open.
+      </li>
+      <br>
+      <li>Model-View-Controller (MVC) is a software architectural pattern that divides the responsibilities
+        of an applicaton into three interconnected elements.</li>
+      <img class="standard-pic" src="images/mvc.png" alt="MVC diagram">
+    </ul>
+  </div>
+
+
+  <div id="Nov0722" class="entry">
+    <h3>7 Nov 2022</h3>
+    <p>For a laugh: <br>a collection of early crochet creations</p>
+    <img class="standard-pic" src="images/67096315997__74420DD9-F43A-44B0-8A98-822F77118181.jpeg"
+      alt="a horrible  crochet cat">
+    <br>
+    <img class="standard-pic" src="images/IMG_0021.jpeg" alt="blue crochet octopuses">
+  </div>
+
+  <div id="Nov0422" class="entry">
+    <h3>4 nov 2022</h3>
+    <p>Why coding and not something else?</p>
+
+    <figure>
+      <blockquote>
+        <p>Computers may be as close as we get to magic in the real world: we type incantations into a machine, and —
+          if
+          the incantations are right — the machine does our bidding. To perform such magic, computer witches and
+          wizards
+          rely not only on words, but also on wands, potions, and an ancient tome or two. Taken together, these tricks
+          of the trade are known as software development: computer programming, plus tools like command lines, text
+          editors, and version control.</p>
+      </blockquote>
+      <figcaption>- Michael Hartl, <cite><a href="https://www.learnenough.com/command-line-tutorial" target=_blank>Learn
+            Enough Command Line to Be Dangerous</a></cite></figcaption>
+    </figure>
+  </div>
+
+
+
+
+
+
+</body>
+
+</html>
+
+<!--
+<div id="Mar2022" class="entry">
+  <h3>20 march 2022</h3>
+  <p>yikes!</p>
+</div>
+-->
+<!--
+<div id="Mar2322" class="entry">
+  <h3>23 march 2022</h3>
+  <p>Works a little better when you put your stitches in the correct places and crochet right side out</p>
+  <img class="standard-pic" src="images/66942610320__A4C9EAD7-0DE8-415B-8EAF-88E2B663750C.jpeg"
+    alt="a better second crochet attempt">
+</div>
+
+<div id="Mar2122" class="entry">
+  <h3>21 march 2022</h3>
+  <p>My first amigurumi attempt!</p>
+  <img class="standard-pic" src="images/66563447373__6FFC88F5-4C34-4C6A-93D8-5B6931063D82.jpeg"
+    alt="a bad first crochet attempt">
+  <p>Pattern credit: <a href="https://craftyiscool.blogspot.com/2011/01/wanna-make-monster.html?m=1"
+      target=_blank>craftyiscool</a>. <br>Although I was pretty busy inserting each stitch in the wrong place, I
+    managed
+    to learn the magic ring
+    (check out <a href="https://thoresbycottage.com/2018/03/23/how-to-crochet-magic-ring-adjustable-loop/"
+      target=_blank>Thoresby Cottage</a>'s super helpful tutorial), increasing, single crochet, and double crochet.
+  </p>
+</div>
+
+<div id="Nov2722" class="TIL">
+    <h3>weekly roundup <br>27 nov 2022</h3>
+    <h4 id="readings">readings/listenings</h4>
+    <ul>
+      <li></li>
+    </ul>
+
+    <h4 id="craftings">craftings</h4>
+    <ul><li></li>
+    </ul>
+
+    <h4 id="learnings">learnings</h4>
+    <ul>
+      <li></li>
+      <br>
+    </ul>
+
+  </div>
+-->
