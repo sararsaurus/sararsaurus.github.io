@@ -6,14 +6,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles/style.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+  <script>
+    function addDarkmodeWidget() {
+      new Darkmode().showWidget();
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+  </script>
+
   <title>Sara Raley</title>
 </head>
 
 <body>
 
+
+
   <header class="page-header">
     <h1 class="title">Sara Raley</h1>
-    <img class="standard-pic" src="images/IMG_7964.jpeg" alt="a sunrise trail run">
+    <img class="standard-pic" src="images/IMG_0612.jpeg" alt="a picture of Sara at an alpine lake">
     <p class="intro">exploring in and out of doors </p>
   </header>
 
@@ -26,26 +36,42 @@
 
   <div id="ProgressBar">
     <h3>Projects</h3>
-    <label>Web scraping app:</label>
-    <progress value="10" max="100"> 10% </progress>
-    <br>
     <label>Terminal news/fun facts app:</label>
     <progress value="100" max="100"> 100% </progress>
     <br>
+    <label>Terminal game app:</label>
+    <progress value="10" max="100"> 10% </progress>
+    <br>
     <label>Full-stack news app:</label>
     <progress value="10" max="100"> 10% </progress>
+    <br>
+    <label>Scraping app:</label>
+    <progress value="10" max="100"> 10% </progress>
+    <br>
+    <label>Full-stack game app:</label>
+    <progress value="5" max="100"> 5% </progress>
+    <br>
   </div>
 
+  <!-- write about regrex for next week 
+    http://ruby-for-beginners.rubymonstas.org/advanced/regular_expressions.html
+-->
+
   <div id="Dec0422" class="TIL">
-    <h3>weekly roundup <br>4 dec 2022</h3>
+    <h3>Weekly Roundup <br>4 dec 2022</h3>
     <h4 id="readings">readings/listenings</h4>
     <ul>
-      <li></li>
+      <li><a
+          href="https://medium.com/dfrlab/analyzing-the-volume-of-kremlin-narratives-targeting-the-spanish-speaking-world-38da532d74ba"
+          target="_blank">Analyzing the volume of Kremlin narratives targeting the Spanish-speaking world</a></li>
+      <li><a
+          href="https://blog.confiant.com/cashrewindo-how-to-age-domains-for-an-investment-scam-like-fine-scotch-a48d22788c84"
+          target="_blank">CashRewindo: How to age domains for an investment scam like fine scotch</a></li>
     </ul>
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Made a cute little terminal app! It uses a number of tty gems for &#10024;beautification&#10024; and a few
+      <li>Made a simple terminal app! It uses a number of tty gems for &#10024;beautification&#10024; and a few
         different free APIs
         to generate the data.
         <a href="https://github.com/sararsaurus/terminal-api-apps" target="_blank">Check it out on
@@ -54,16 +80,47 @@
       <br>
       <img class="screenshot" src="images/Screenshot 2022-11-29 at 2.41.27 PM.png">
       <br>
-      <li>Tried to build a simple <a href="https://www.scrapingbee.com/blog/web-scraping-ruby/" target="_blank">web
-          scraper</a> in Ruby. Scraping is kind of tricky: it requires the relevant gem
-        installs, familiarity with the DOM, logic to search through selectors, and some way to export it - before even
-        tackling a dynamic page. I was able to scrape bits off a Wikipedia page and export those to a CSV file. </li>
+      <li> I tackled my scraping project again, but I haven't figured out how to get the data I really want. I'm trying
+        to collect the trails for the Indian Peaks Wilderness Area, where I patrol as a US Forest Service volunteer. A
+        state website has the KMZ for all trails in CO, so I was able to convert that to a ZIP file and extract the KML
+        file that I could then open in Google Earth. BUT I haven't yet figured out how to extract only the information I
+        want.</li>
+      <br>
+      <li>I tried using <span style="background-color: #eee; border: 1px solid #999">nokogiri</span>
+        because my KML file is actually primarily composed of XML and HTML. I tested my code to print the doc to the
+        terminal and for some reason it only pulled a small portion. It did, interestingly, include more DOM-like
+        features
+        than were visible in the KML file I was working with in in TextEdit.</li>
     </ul>
 
     <h4 id="learnings">learnings</h4>
     <ul>
-      <li></li>
+      <li>Starting TryHackMe's <a
+          href="https://tryhackme.com/christmas?utm_source=email&utm_medium=email&utm_campaign=aoc4&utm_id=aoc4"
+          target="_blank">Advent of Cyber</a>! We'll complete a task each day of the month and cover red teaming,
+        cyber
+        investigations, web exploitation, IoT hacking, and cyber defense &#127873; &#127876;. On Day 2, I learned how to
+        use <span style="background-color: #eee; border: 1px solid #999">nano</span> to get
+        a sense for the data in a log file, <span style="background-color: #eee; border: 1px solid #999">wc -l</span> to
+        get the number of lines in it, and <span style="background-color: #eee; border: 1px solid #999">grep</span> to
+        search!</li>
       <br>
+      <li>Day 3 was all about OSINT techniques like google dorking, which is using advanced search terms to locate
+        specific file
+        types, versions, text, and more; checking the WHOIS
+        information of a website; evaluating the robots.txt file; and searching GitHub repos.</li>
+      <br>
+      <li>I was trying to write code that could tell if a string was all uppercase AND devoid of letters,
+        and
+        I
+        was surprised to see that a fully numeric string was interpreted as uppercase. I eventually settled with <span
+          style="background-color: #eee; border: 1px solid #999">elsif sentence == sentence.upcase &&
+          sentence.include?("ABCDEFGHIJKLMNOPQRSTUVWXYZ")</span> but there's gotta be a better way.</li>
+      <br>
+      <li>I think I may have found that better way. But first, an apparently famous joke:
+        <em>"Some people, when confronted with a problem, think 'I know, I'll use regular expressions.' Now they have
+          two problems."</em>
+      </li>
     </ul>
 
   </div>
@@ -71,7 +128,7 @@
 
 
   <div id="Nov2722" class="TIL">
-    <h3>weekly roundup <br>27 nov 2022</h3>
+    <h3>Weekly Roundup <br>27 nov 2022</h3>
     <h4 id="readings">readings/listenings</h4>
     <ul>
       <li><a href="https://www.quickanddirtytips.com/articles/what-does-zhuzh-mean-and-why-is-it-so-hard-to-spell/"
@@ -80,12 +137,17 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>covid week &#129409;</li>
+      <li>covid week &#128567;</li>
+      <br>
+      <li>Tried to build a simple <a href="https://www.scrapingbee.com/blog/web-scraping-ruby/" target="_blank">web
+          scraper</a> in Ruby. Scraping is tricky: it requires the relevant gem
+        installs, familiarity with the DOM, logic to search through selectors, and some way to export it - before even
+        tackling a dynamic page. I was able to scrape bits off a Wikipedia page and export those to a CSV file.</li>
     </ul>
 
     <h4 id="learnings">learnings</h4>
     <ul>
-      <li>I internalized the value of testing code in the rails console! It was how I figured out what exactly we were
+      <li>I internalized the value of testing code in the rails console. It was how I figured out what exactly we were
         trying to do in the whole MVC structure, and testing it earlier was a lot less cumbersome than finding errors
         later. We'd swiftly find out if our model associations weren't quite right, without having to suffer through
         making the controller attempt to generate a view.</li>
@@ -102,7 +164,7 @@
 
 
   <div id="Nov2022" class="TIL">
-    <h3>weekly roundup <br>20 nov 2022</h3>
+    <h3>Weekly Roundup <br>20 nov 2022</h3>
 
     <h4 id="readings">readings/listenings</h4>
     <ul>
@@ -155,7 +217,7 @@
   </div>
 
   <div id="Nov1322" class="TIL">
-    <h3>weekly roundup <br>13 nov 2022</h3>
+    <h3>Weekly Roundup <br>13 nov 2022</h3>
 
     <h4 id="readings">readings/listenings</h4>
     <ul>
@@ -184,16 +246,6 @@
         of an applicaton into three interconnected elements.</li>
       <img class="standard-pic" src="images/mvc.png" alt="MVC diagram">
     </ul>
-  </div>
-
-
-  <div id="Nov0722" class="entry">
-    <h3>7 Nov 2022</h3>
-    <p>For a laugh: <br>a collection of early crochet creations</p>
-    <img class="standard-pic" src="images/67096315997__74420DD9-F43A-44B0-8A98-822F77118181.jpeg"
-      alt="a horrible  crochet cat">
-    <br>
-    <img class="standard-pic" src="images/IMG_0021.jpeg" alt="blue crochet octopuses">
   </div>
 
   <div id="Nov0422" class="entry">
@@ -237,6 +289,7 @@
   <img class="standard-pic" src="images/66942610320__A4C9EAD7-0DE8-415B-8EAF-88E2B663750C.jpeg"
     alt="a better second crochet attempt">
 </div>
+
 
 <div id="Mar2122" class="entry">
   <h3>21 march 2022</h3>

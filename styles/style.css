@@ -1,5 +1,6 @@
 header {
-  background-color: rgb(208, 226, 239);
+  color: white;
+  background-color: rgb(30 118 110);
   text-align: center;
   padding-bottom: 10px;
   padding-top: 5px;
@@ -16,7 +17,7 @@ body {
 }
 
 body {
-  width: 600px;
+  width: 800px;
   margin: 0 auto;
   padding: 0px 20px 20px 20px;
 }
