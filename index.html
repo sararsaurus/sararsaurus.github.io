@@ -7,12 +7,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles/style.css" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-  <script>
+  <!-- <script>
     function addDarkmodeWidget() {
       new Darkmode().showWidget();
     }
     window.addEventListener('load', addDarkmodeWidget);
   </script>
+  <script>const options = {
+    label: '🌓', // default: ''
+  } -->
+  const darkmode = new Darkmode(options);
+  darkmode.showWidget();</script>
 
   <title>Sara Raley</title>
 </head>
@@ -59,6 +64,7 @@
   <h4 id="readings">readings/listenings</h4>
   <ul>
     <li><a href="https://arstechnica.com/information-technology/2022/12/advanced-botnet-taken-down-by-an-all-too-human-flaw-syntax-error/" target="_blank">Syntax errors are the doom of us all, including botnet authors</a></li>
+    <li><a href="https://www.nytimes.com/2022/12/04/business/chess-cheating-scandal-magnus-carlsen-hans-niemann.html?smid=url-share" target="_blank">He's the Bad Boy of Chess. But Did He Cheat?</a></li>
   </ul>
 
   <h4 id="craftings">craftings</h4>
@@ -67,9 +73,9 @@
 
   <h4 id="learnings">learnings</h4>
   <ul>
-    <li>Regular expressions have found me! I was trying to validate ISBNs and needed to make sure that the string contained only digits until the last character. And lo, my first regex: <span style="background-color: #eee; border: 1px solid #999">/\D/.match(isbn_string.chop)</span>.</li>
+    <li>I was trying to validate ISBNs and needed to make sure that the string contained only digits until the last character. And lo, my first regex (regexp?): <span style="background-color: #eee; border: 1px solid #999">/\D/.match(isbn_string.chop)</span>.</li>
     <br>
-    <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used regex to find and remove some repeated characters. I guess once you start looking, regex are everywhere. </li>
+    <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. </li>
     <br>
   </ul>
 
