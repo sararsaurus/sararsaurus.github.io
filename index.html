@@ -33,11 +33,11 @@
 
   <div id="ProgressBar">
     <h3>Projects</h3>
-    <label>Terminal news/fun facts app:</label>
+    <label>Terminal fun facts app:</label>
     <progress value="100" max="100"> 100% </progress>
     <br>
     <label>Terminal game app:</label>
-    <progress value="10" max="100"> 10% </progress>
+    <progress value="100" max="100"> 100% </progress>
     <br>
     <label>Full-stack news app:</label>
     <progress value="10" max="100"> 10% </progress>
@@ -59,11 +59,17 @@
   </ul>
 
   <h4 id="craftings">craftings</h4>
-  <ul><li></li>
+  <ul><li>
+    I followed a <a href="https://youtu.be/wMJ6lxgT-mE" target="_blank">a great demo</a> to create a simple terminal-based adventure game. It was a great introduction to thinking through gameplay and I'm excited to build on it next week.
+  </li>
+  <br>
+  <img class = "screenshot" src="images/Screenshot 2022-12-08 at 6.00.25 PM.png">
   </ul>
 
   <h4 id="learnings">learnings</h4>
   <ul>
+    <li>Day 8 of THM's Advent of Cyber tackled smart contracts! And, of course, a smart contract is only as secure as its programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract exploits flawed logic by using a fallback function to continue depleting a contract's total balance. This was my first encounter with Solidity, an OOP language created specifically for smart contracts on blockchain platforms, and the conditional logic in the fallback attack function was more readable than I expected.</li>
+    <br>
     <li>I was trying to validate ISBNs and needed to make sure that the string contained only digits until the last character. And lo, my first regex (regexp?): <span style="background-color: #eee; border: 1px solid #999">/\D/.match(isbn_string.chop)</span>.</li>
     <br>
     <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. </li>
