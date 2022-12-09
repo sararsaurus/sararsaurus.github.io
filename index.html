@@ -68,11 +68,13 @@
 
   <h4 id="learnings">learnings</h4>
   <ul>
-    <li>Day 8 of THM's Advent of Cyber tackled smart contracts! And, of course, a smart contract is only as secure as its programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract exploits flawed logic by using a fallback function to continue depleting a contract's total balance. This was my first encounter with Solidity, an OOP language created specifically for smart contracts on blockchain platforms, and the conditional logic in the fallback attack function was more readable than I expected.</li>
+    <li>I've been working on a terminal to-do app, and to create my incomplete tasks array I learned about Ruby's .select method. Turns out using .select on an array always creates a new array (therefore rendering unncessary my first attempt with a blank array and a conditional statement). Select is great when you want to filter a list and return an array with the results: <span style="background-color: #eee; border: 1px solid #999">@tasks.select { |task| !task.completed }</span>.</li>
+    <br>
+    <li>Day 8 of THM's Advent of Cyber tackled smart contracts... which are only as smart (and as secure) as their programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract exploits flawed logic by using a fallback function to continue depleting a contract's total balance. This was my first encounter with Solidity, an OOP language created specifically for smart contracts on blockchain platforms, and the conditional logic in the fallback attack function was more readable than I expected.</li>
     <br>
     <li>I was trying to validate ISBNs and needed to make sure that the string contained only digits until the last character. And lo, my first regex (regexp?): <span style="background-color: #eee; border: 1px solid #999">/\D/.match(isbn_string.chop)</span>.</li>
     <br>
-    <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. </li>
+    <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. (To be fair, I did unknowingly encounter them earlier with <span style="background-color: #eee; border: 1px solid #999">grep</span> -- which, turns out, stands for global/regular expression/print. Here's a nifty <a href="https://swcarpentry.github.io/shell-novice/07-find/index.html" target="_blank">link</a> about finding things using the command line.</li>
     <br>
   </ul>
 
@@ -117,14 +119,13 @@
     <ul>
       <li>Starting TryHackMe's <a
           href="https://tryhackme.com/christmas?utm_source=email&utm_medium=email&utm_campaign=aoc4&utm_id=aoc4"
-          target="_blank">Advent of Cyber</a>! We'll complete a task each day of the month and cover red teaming,
-        cyber
-        investigations, web exploitation, IoT hacking, and cyber defense &#127873; &#127876;. On Day 2, I learned how to
+          target="_blank">Advent of Cyber</a>! We'll complete a task each day of the month and cover red teaming, cyber investigations, web exploitation, IoT hacking, and cyber defense &#127873; &#127876;. On Day 2, I learned how to
         use <span style="background-color: #eee; border: 1px solid #999">nano</span> to get
         a sense for the data in a log file, <span style="background-color: #eee; border: 1px solid #999">wc -l</span> to
-        get the number of lines in it, and <span style="background-color: #eee; border: 1px solid #999">grep</span> to
-        search!</li>
-      <br>
+        get the number of lines in it, and <span style="background-color: #eee; border: 1px solid #999">grep</span>, which finds and prints lines that match a pattern, to
+        search.
+        <br>
+        <br>
       <li>Day 3 was all about OSINT techniques like google dorking, which is using advanced search terms to locate
         specific file
         types, versions, text, and more; checking the WHOIS
@@ -196,11 +197,8 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Finally braved (hand-)washing the dragon. Almost ready to ship!</li>
+      <li>Finally braved (hand-)washing my amigurumi dragon. Almost ready to ship!</li>
       <img class="standard-pic" src="images/IMG_0865.jpeg" alt="A crochet project drying">
-      <br>
-      <li>Made some sourdough with just the right amount of help from my sous chef. </li>
-      <img class="standard-pic" src="images/IMG_0866.jpeg" alt="A dog looks at a loaf of bread">
     </ul>
 
     <h4 id="learnings">learnings</h4>
@@ -247,9 +245,8 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Reinforced the stitches connecting my dragon legs to the body. In the future I will <em>always</em> leave a
-        longer
-        tail on anything that will need to be sewed on later.</li>
+      <li>Made some sourdough with just the right amount of help from my sous chef. </li>
+      <img class="standard-pic" src="images/IMG_0866.jpeg" alt="A dog looks at a loaf of bread">
     </ul>
 
     <h4 id="learnings">learnings</h4>
@@ -257,19 +254,16 @@
       <li>Gaia now has OpenSnow data! And it's as easy as tapping anywhere on the map to get the current weather info:
         <a href="https://blog.gaiagps.com/opensnow-weather-forecasts-at-a-tap/" target="_blank">OpenSnow Weather Now
           Available at-a-Tap on the Map</a>. Also, I got tired of Gaia opening to a random map, so I bookmarked the
-        relevant url for where I want it to open.
+        relevant url for the wilderness area I typically want to start with.
       </li>
       <br>
-      <li>Model-View-Controller (MVC) is a software architectural pattern that divides the responsibilities
-        of an applicaton into three interconnected elements.</li>
+      <li>Model-View-Controller (MVC) is an architectural pattern that separates applications into three main categories: the model, the view, and the controller. In this pattern, each component has its own specific responsibility. While implemented slightly differently in various frameworks, the general pattern is one of the most frequently used industry standards for creating scalable and extensible software. The Model is focused solely on the data and data-related logic of the application. This could be business data for the application or data that is being transacted between the View and Controller. The View is concerned only with the UI of the application and should not know what the business logic of the application is. The only logic the View should be concerned with is how to display data, based on what kind of data it was handed. The Controller acts as the go-between for the Model and the View. It handles any user interaction coming from the View, and determines any changes that may need to be made to the Model. It can also manipulate data from the Model to give to the View, for rendering a final output.</li>
       <img class="standard-pic" src="images/mvc.png" alt="MVC diagram">
     </ul>
   </div>
 
   <div id="Nov0422" class="entry">
-    <h3>4 nov 2022</h3>
-    <p>Why coding and not something else?</p>
-
+    <h3>Beginnings <br>4 nov 2022</h3>
     <figure>
       <blockquote>
         <p>Computers may be as close as we get to magic in the real world: we type incantations into a machine, and —
