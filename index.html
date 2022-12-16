@@ -36,11 +36,11 @@
     <label>Terminal fun facts app:</label>
     <progress value="100" max="100"> 100% </progress>
     <br>
-    <label>Terminal game app:</label>
+    <label>Terminal game app v1:</label>
     <progress value="100" max="100"> 100% </progress>
     <br>
     <label>Full-stack news app:</label>
-    <progress value="10" max="100"> 10% </progress>
+    <progress value="30" max="100"> 30% </progress>
     <br>
     <label>Scraping app:</label>
     <progress value="10" max="100"> 10% </progress>
@@ -50,17 +50,46 @@
     <br>
   </div>
 
+  <div id="Dec1822" class="TIL">
+    <h3>Weekly Roundup <br>18 dec 2022</h3>
+    <h4 id="readings">readings/listenings</h4>
+    <ul>
+      <li><a href="https://open.spotify.com/episode/4sDylBXvC2GyFy0Adlgy7a?si=LVvzUkJaTYaaJ_dhbiLmiQ&nd=1" target="_blank">Darknet Diaries episode 126: REvil</a></li>
+      <li><a href="https://arstechnica.com/information-technology/2022/12/fubotv-says-criminal-cyber-attack-caused-outage-during-world-cup-semifinals/" target="_blank">FuboTV goes kaput during World Cup semifinals, blames “criminal cyber attack”</a></li>
+    </ul>
+
+    <h4 id="craftings">craftings</h4>
+    <ul>
+      <li>HUGE NEWS! I was finally able to connect a backend API with a frontend that displays on a webpage. The primary trick was making sure that my backend renders <em>only</em> what I want to disply on my webpage.</li>
+      <br>
+      <li>Changing the terminal game I built last week from a demo helped me better understand how its unfamiliar code works. For example, the RNG generator uses Ruby's upto function to deploy different numbers of dice for different scenarios. So, if we have 2 dice, we'll run the loop twice, but if we have 3, we'll run it thrice: <span style="background-color: #eee; border: 1px solid #999">1.upto(number_of_dice) do</span>. I did, however, manage to break the gameplay... &#128539; </li>
+    </ul>
+
+    <h4 id="learnings">learnings</h4>
+    <ul>
+      <li>During this week's THM Advent of Cyber challenges, we learned about malware's classic patterns (establishing network connections, using registry keys, downloading/creating files); the layers of defense necessary to secure file uploads on a web app (file content validation, file extension validation, file size validation, file renaming, and malware scanning); the <a href="https://owasp.org/Top10/" target="_blank">OWASP Top 10 list</a> - specifically IDOR vulnerabilities (where a user can manipulate poor access control to bypass authorization); and industry tools like Wireshark to conduct traffic and packet analysis (the process of extracting, assessing, and identifying network patterns such as connections, shares, commands and other network activities, like logins, and system failures, from prerecorded traffic files). </li>
+      <br>
+      <li>I have really appreciated <a href="https://www.youtube.com/@alh4zr3d3/featured" target="_blank">Alh4zr3d's</a> and <a href="https://www.youtube.com/@InsiderPhD/featured" target="_blank">InsiderPhD's</a> walkthroughs for the THM challenges - check them out! 
+        
+
+        
+      </li>
+    </ul>
+
+  </div>
+
 <div id="Dec1122" class="TIL">
   <h3>Weekly Roundup <br>11 dec 2022</h3>
   <h4 id="readings">readings/listenings</h4>
   <ul>
+    <li><a href="https://www.npr.org/sections/pictureshow/2022/12/10/1141604273/comedy-wildlife-photography-awards-funny-animals-photos" target="_blank">We're not lion: The 2022 Comedy Wildlife Photography Awards are a good laugh</a></li>
     <li><a href="https://arstechnica.com/information-technology/2022/12/advanced-botnet-taken-down-by-an-all-too-human-flaw-syntax-error/" target="_blank">Syntax errors are the doom of us all, including botnet authors</a></li>
     <li><a href="https://www.nytimes.com/2022/12/04/business/chess-cheating-scandal-magnus-carlsen-hans-niemann.html?smid=url-share" target="_blank">He's the Bad Boy of Chess. But Did He Cheat?</a></li>
   </ul>
 
   <h4 id="craftings">craftings</h4>
   <ul><li>
-    I followed a <a href="https://youtu.be/wMJ6lxgT-mE" target="_blank">great demo</a> to create a simple terminal-based adventure game. It was a great introduction to thinking through gameplay and I'm excited to build on it next week.
+    I followed a <a href="https://youtu.be/wMJ6lxgT-mE" target="_blank">great demo</a> to create a simple terminal-based adventure game. It was an excellent introduction to thinking through gameplay and I'm excited to build on it next week.
   </li>
   <br>
   <img class = "screenshot" src="images/Screenshot 2022-12-08 at 6.00.25 PM.png">
@@ -68,13 +97,15 @@
 
   <h4 id="learnings">learnings</h4>
   <ul>
+    <li>On Day 10 of THM's Advent of Cyber, I learned about Cetus, a browswer plugin that's designed to help find and alter the data your computer stores in its memory for some games. On Day 11, I practiced using an open-source memory forensics toolkit written in Python called Volatility to analyze dumps of volatile memory - the memory that's in use when a computer is powered on, like your clipboard or unsaved files - to see what malware was doing at a particular point in time.</li>
+    <br>
     <li>I've been working on a terminal to-do app, and to create my incomplete tasks array I learned about Ruby's .select method. Turns out using .select on an array always creates a new array (therefore rendering unncessary my first attempt with a blank array and a conditional statement). Select is great when you want to filter a list and return an array with the results: <span style="background-color: #eee; border: 1px solid #999">@tasks.select { |task| !task.completed }</span>.</li>
     <br>
-    <li>Day 8 of THM's Advent of Cyber tackled smart contracts... which are only as smart (and as secure) as their programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract exploits flawed logic by using a fallback function to continue depleting a contract's total balance. This was my first encounter with Solidity, an OOP language created specifically for smart contracts on blockchain platforms, and the conditional logic in the fallback attack function was more readable than I expected.</li>
+    <li>Day 8 of THM's Advent of Cyber tackled smart contracts... which are only as smart (and as secure) as their programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract exploits flawed logic by using a fallback function to continue depleting a contract's total balance. This was my first encounter with Solidity, an OOP language created specifically for smart contracts on blockchain platforms.</li>
     <br>
     <li>I was trying to validate ISBNs and needed to make sure that the string contained only digits until the last character. And lo, my first regex (regexp?): <span style="background-color: #eee; border: 1px solid #999">/\D/.match(isbn_string.chop)</span>.</li>
     <br>
-    <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. (To be fair, I did unknowingly encounter them earlier with <span style="background-color: #eee; border: 1px solid #999">grep</span> -- which, turns out, stands for global/regular expression/print. Here's a nifty <a href="https://swcarpentry.github.io/shell-novice/07-find/index.html" target="_blank">link</a> about finding things using the command line.</li>
+    <li>And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. (To be fair, I did unknowingly encounter them earlier with <span style="background-color: #eee; border: 1px solid #999">grep</span> -- which, turns out, stands for global/regular expression/print. Here's a nifty <a href="https://swcarpentry.github.io/shell-novice/07-find/index.html" target="_blank">link</a> about finding things using the command line.)</li>
     <br>
   </ul>
 
@@ -93,7 +124,7 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Made a simple terminal app! It uses a number of tty gems for &#10024;beautification&#10024; and a few
+      <li>Made a simple terminal app! It uses a number of tty gems for beautification and a few
         different free APIs
         to generate the data.
         <a href="https://github.com/sararsaurus/terminal-api-apps" target="_blank">Check it out on
