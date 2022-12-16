@@ -86,3 +86,8 @@ pre code {
   display: block;
   padding: 10px;
 }
+
+#buttons {
+  justify-content: center;
+  display: flex;
+}
