@@ -86,9 +86,9 @@
 
     <h4 id="learnings">learnings</h4>
     <ul>
-      <li>THM's Advent of Cyber started off strong this week with an intro to hardware hacking! We used a logic analyzer to examine the signals traveling between devices, and we learned about protocols for transmitting data: USART (serial communication), SPI (which separates the clock from the data line and so has an extra wire compared to USART, but is faster and more reliable), and I2C (which was created to mitigate the drawbacks of both USART and SPI - over a thousand devices can be connected to the same two lines). Without protocols, we'd need an unfathomable number of wires to transmit the binary representation of each <a href="https://www.asciitable.com/" target="_blank">ASCII character</a>).
-      </li>
+      <li>THM's Advent of Cyber started off strong this week with an intro to hardware hacking! We used a logic analyzer to examine the signals traveling between devices, and we learned about protocols for transmitting data: USART (serial communication), SPI (which separates the clock from the data line and so has an extra wire compared to USART, but is faster and more reliable), and I2C (which was created to mitigate the drawbacks of both USART and SPI - over a thousand devices can be connected to the same two lines). Without protocols, we'd need an unfathomable number of wires to transmit the binary representation of each <a href="https://www.asciitable.com/" target="_blank">ASCII character</a>).</li>
       <br>
+      <li>Then we had fun with IoT devices, which of course are uniquely vulnerable because they typically must be lightweight, without human-enabled authentication (like a manually typed password), and designed to all be interconnected. Security is often at best a secondary consideration. IoT devices typically rely on middleware to support their messaging protocol, such as MQTT, CoAP, AMQP, or DDS. (And then I had a little moment of panic where I realized I didn't fully understand what a port is...it's just a virtual point where network connections start and end, software-based and managed by a computer's OS.) And we intepreted some device source code to figure out its expected behavior so we could send a message and change its behavior - which required puzzling out some JSON hashes! </li>
     </ul>
 
   </div>
@@ -116,7 +116,7 @@
       <br>
       <li>And, of course, <a href="https://regexone.com/">regexes</a> returned! Regexes, combined with HTML's built-in features, give us pretty granular control over user input. For example, <span style="background-color: #eee; border: 1px solid #999">input type="text" id="uname" name="uname" pattern="[a-zA-Z0-9]+"</span> will filter for a case-insensitive alphanumeric string. </li>
       <br>
-      <li>I have really appreciated <a href="https://www.youtube.com/@alh4zr3d3/featured" target="_blank">Alh4zr3d's</a> and <a href="https://www.youtube.com/@InsiderPhD/featured" target="_blank">InsiderPhD's</a> walkthroughs for the THM challenges - check them out! 
+      <li>I have really appreciated <a href="https://www.youtube.com/@alh4zr3d3/featured" target="_blank">Alh4zr3d's</a> and <a href="https://www.youtube.com/@InsiderPhD/featured" target="_blank">InsiderPhD's</a> walkthroughs for the THM challenges - check them out! (Agh, I even opened up Twitch for the first time to see ) <a href="https://www.twitch.tv/alh4zr3d/about" target="_blank">Alh4zr3d's content</a> there.)
         
 
         
