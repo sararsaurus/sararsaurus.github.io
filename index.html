@@ -81,10 +81,14 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Before I go on each patrol as a USFS volunteer, I need to amalgamate information from a number of different sources: everything from the forecast, to nearby areas of interest, to regulations, to the area's history. So, to streamline that process, I'm working on an app that will pull all these threads together onto a single, printable page. I've hardcoded all my data for now to get the first version of this app up and running, but I've designed everything to have room to grow as I do. For example, eventually the trail conditions data will be scraped from other sources and the forecast and sunrise/sunset times will call back to external APIs. </li>
+      <li>Before I go on each patrol as a USFS volunteer, I check a number of different sources: everything from the forecast, to nearby areas of interest, to regulations, to the area's history. I never know exactly what questions I'll get asked on the trail! So, to streamline that process, I'm working on an app that will pull all these threads together onto a single, printable page. I've hardcoded all my data for now to get the first version up and running, but I've designed everything to have room to grow as I do. For example, eventually the trail conditions data will be scraped from other sources and the forecast and sunrise/sunset times will call back to external APIs. </li>
       <br>
       <li>Giving myself this room for future growth has necessarily made the app's structure more challenging than if I had simply assigned each trail a set of permanent conditions. I was thrilled to successfully - and relatively painlessly - figure out how to get these nested attributes to display in the frontend:</li>
       <img class="screenshot" src="images/Screenshot 2023-01-04 at 9.32.49 AM.png" alt="code">
+      <br>
+      <li>But, allowing a user to schedule a hike for the trail they were viewing (rather than requiring them to input the trail info separately) was NOT as painless. Turns out you need to combine functions - so, rather than having a totally separate <span style="background-color: #eee; border: 1px solid #999">HikesNew</span>, I needed to add it to the relevant modal in every location.</li> <img class="screenshot" src="images/Screenshot 2023-01-05 at 12.09.48 PM.png" alt="code">
+      <br>
+      <img class="screenshot" src="images/Screenshot 2023-01-05 at 12.11.47 PM.png" alt="code">
     </ul>
 
     <h4 id="learnings">learnings</h4>
