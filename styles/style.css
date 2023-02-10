@@ -61,6 +61,13 @@ blockquote p::after {
   height: 100%;
 }
 
+.small-screenshot {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 .entry {
   text-align: center;
   border: thick solid deeppink;
