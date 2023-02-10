@@ -96,15 +96,12 @@
     <h3>Weekly(ish) Roundup <br>14 feb 2023</h3>
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>I built out a Codecademy project so that it could live free in the wild. Codecademy is designed to make it relatively easy to completely somewhat sophisticated projects: you just follow the instructions to build out a single page in the inbuilt IDE. But I learned a lot by extrapolating the guidance to create my own app.</li>
+      <li>I built out a Codecademy project so that it could live free in the <a href="https://github.com/sararsaurus/animal_fun_facts">wild</a>. I like to make sure that when I follow demos, I do them in my own environment and on my own computer. Figuring out how to make them actually exist requires some extrapolation and learning each time. In this case, I created all the CSS (and found the images), adapted the legacy React 17 stuff, and figured out how to translate it all into an app that I could locally host.</li>
+      <br>
+      <li>The code itself is also pretty cool. It simply uses another React file to generate the data (kind of a backend shortcut), and then iterates through that data. And I learned how to generate text by clicking on an image, which could help with my SomeTrails map data question!</li>
       <img class="screenshot" src="images/2023-02-10 11.18.29.gif" alt="gif of project">
     </ul>
 
-    <h4 id="learnings">learnings</h4>
-    <ul>
-      <li></li>
-      <br>
-    </ul> 
   </div>
 
   <div id="Feb0723" class="TIL">
@@ -120,7 +117,7 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Followed <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe">this demo</a> to create a tic-tac-toe game that (maybe?) taught me more about React's state management.</li>
+      <li>Followed <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe">this demo</a> to create a tic-tac-toe game that (hopefully?) taught me more about React's state management.</li>
       <li>Added some still-not-working buttons to SomeTrails in the hopes of one day connecting my Mapbox map to the trails display.</li>
     </ul>
 
@@ -142,7 +139,7 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Connected a frontend and a backend to allow a user to query a third-party API. Putting these pieces together helped me internalize that the calls to the third-party API are indeed populating my own local database, which is how the model and controller are able to generate the data the user sees.</li>
+      <li>Created a full-stack <a href="https://github.com/sararsaurus/dictionary-frontend">Rails/React app</a> that allows user to query a third-party API. Putting these pieces together helped me internalize that the calls to the third-party API are indeed populating my own local database, which is how the model and controller are able to generate the data the user sees.</li>
       <br>
       <img class="screenshot" src="images/2023-02-10 14.03.30.gif" alt="gif demo">
       <br>
@@ -163,7 +160,10 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>The first version of SomeTrails is complete! The <a href="https://github.com/sararsaurus/backend-happy-trails-api">backend</a> and <a href="https://github.com/sararsaurus/frontend-happy-trails">frontend</a> repos have info about the code, and the demo will show you what it's like in action!</li>
+      <li>The first version of SomeTrails is complete! The <a href="https://github.com/sararsaurus/backend-happy-trails-api">backend</a> and <a href="https://github.com/sararsaurus/frontend-happy-trails">frontend</a> repos have info about the code, and this demo shows you what it's like in action! </li>
+      <br>
+      <li>I managed to surprise myself by figuring out how to integrate two separate third-party APIs (one of them in two different ways), how to add some interactivity to the terrain map, and how to embed twitter feeds!</li>      
+      <br>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/5GF2niIeHfY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </ul>
   </div>
@@ -172,13 +172,15 @@
     <h3>Weekly Roundup <br>08 jan 2023</h3>
     <h4 id="readings">readings/listenings</h4>
     <ul>
-      <li><a href="https://www.economist.com/business/2023/01/04/how-to-have-the-most-productive-working-day-of-your-life">How to have the most productive working day of your life: new year, new you </a></li>
+      <li><a href="https://www.economist.com/business/2023/01/04/how-to-have-the-most-productive-working-day-of-your-life">How to have the most productive working day of your life: new year, new you &#128539;</a></li>
     </ul>
     <h4 id="craftings">craftings</h4>
     <ul>
       <li>Starting SomeTrails, the app I wish I had as a USFS volunteer! I've hardcoded all my data for now to get the first draft up and running, but I've designed everything to have room to grow as I do. For example, eventually the trail conditions data will be ethically scraped from other sources and the forecast and sunrise/sunset times will call back to third-party APIs. </li>
       <br>
-      <li>Giving myself this room for future growth has necessarily made the app's structure more challenging than if I had simply assigned each trail a set of permanent conditions. I was able to successfully (and relatively painlessly!) figure out how to get these nested attributes to display in the frontend:</li>
+      <li>Building it out this way is actually what got me unstuck. My original idea was so lofty that it paralyzed me for awhile. Once I realized I could give myself room to grow, I was able to keep moving!</li>
+      <br>
+      <li>Outlining the app this way has necessarily made its structure more challenging than if I had simply assigned each trail a set of permanent conditions. I was able to successfully (and relatively painlessly!) figure out how to get these nested attributes to display in the frontend:</li>
       <img class="screenshot" src="images/Screenshot 2023-01-04 at 9.32.49 AM.png" alt="code">
       <br>
       <li>But, allowing a user to schedule a hike for the trail they were viewing (rather than requiring them to input the trail info separately) was NOT as painless. Turns out you need to combine functions - so, rather than having a totally separate <span style="background-color: #eee; border: 1px solid #999">HikesNew</span>, I needed to add it to the relevant modal in every location.</li> <img class="screenshot" src="images/Screenshot 2023-01-05 at 12.09.48 PM.png" alt="code">
@@ -197,7 +199,7 @@
   
       <h4 id="craftings">craftings</h4>
       <ul>
-        <li>Finally got some simple query parameters through my brain! A user can now type a search term into the browser to change the call that my Rails backend is making to a free third-party API.</li>
+        <li>Got some simple query parameters working! A user can now type a search term into the browser to change the call that my Rails backend is making to a free third-party API.</li>
         <img class="screenshot" src="images/Screenshot 2022-12-29 at 8.56.50 PM.png" alt="code">
         <img class="screenshot" src="images/Screenshot 2022-12-29 at 9.02.32 PM.png" alt="browser">
         <br>
@@ -227,13 +229,13 @@
 
     <h4 id="craftings">craftings</h4>
     <ul>
-      <li>Made progress on the full-stack news app. (It's still pretty basic and it just uses a free news API... of questionable quality.) But I added users, sessions, and authentication to the Rails backend and corresponding authentication to the React frontend. The backend has POST routes for users and sessions and logs them in with JSON Web Tokens (JWTs), which are then added to the axios default headers and retained in the browser's local storage.</li>
+      <li>Made progress on the full-stack news app. I added users, sessions, and authentication to the Rails backend and corresponding authentication to the React frontend. The backend has POST routes for users and sessions and logs them in with JSON Web Tokens (JWTs), which are then added to the axios default headers and retained in the browser's local storage.</li>
       <br>
       <li>I also imported bootstrap and zhuzed it up a bit! I used modals for the signup and login features because modal windows offer better speed than creating new pages.</li>
       <br>
       <img class="screenshot" src="images/Screenshot 2022-12-19 at 5.33.56 PM.png" alt="screenshot of a news app">
       <br>
-      <li>I added rock paper scissors to my choose-your-own-adventure game, and now I need to think through whether it's just a nice detour or if there should be points that mean something if you win. I also need to think through my overall gameplay a bit if I want to keep this an educational game; it's definitely harder to write than a monster-slaying, cavern-escaping game.</li>
+      <li>Separately, I added rock paper scissors to my choose-your-own-adventure game, and now I need to think through whether it's just a nice detour or if there should be points that mean something if you win. I also need to think through my overall gameplay a bit if I want to keep this an educational game; it's definitely harder to write than a monster-slaying, cavern-escaping game.</li>
     </ul>
 
     <h4 id="learnings">learnings</h4>
@@ -287,7 +289,7 @@
     I followed a <a href="https://youtu.be/wMJ6lxgT-mE" target="_blank">great demo</a> to create a simple terminal-based adventure game. It was an excellent introduction to thinking through gameplay and I'm excited to build on it next week.
   </li>
   <br>
-  <img class = "screenshot" src="images/Screenshot 2022-12-08 at 6.00.25 PM.png">
+  <img class = "small-screenshot" src="images/Screenshot 2022-12-08 at 6.00.25 PM.png">
   </ul>
 
   <h4 id="learnings">learnings</h4>
