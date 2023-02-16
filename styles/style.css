@@ -1,33 +1,63 @@
+* {
+  box-sizing: border-box;
+}
+
 header {
   color: white;
   background-color: rgb(30 118 110);
   text-align: center;
-  padding-bottom: 10px;
-  padding-top: 5px;
-  margin-top: 5px;
+  padding: 30px;
+  /* padding-bottom: 10px; */
+  /* padding-top: 5px;
+  margin-top: 5px; */
 }
-
 
 body {
   font-family: "Roboto Mono", monospace;
+  padding: 20px;
+  /* width: 800px;
+  margin: 0 auto; */
+  /* padding: 0px 20px 20px 20px; */
 }
 
 .intro {
   text-align: center;
 }
 
-body {
-  width: 800px;
-  margin: 0 auto;
-  padding: 0px 20px 20px 20px;
+/* Create two unequal columns that floats next to each other */
+/* Left column */
+.leftcolumn {
+  float: left;
+  width: 70%;
 }
 
-/*
-#logo {
-  border-radius: 10%;
-  width: 250px;
+/* Right column */
+.rightcolumn {
+  float: left;
+  width: 30%;
+  padding-left: 20px;
 }
-*/
+
+/* personal image */
+/* .img {
+  width: 20%;
+  padding: 20px;
+} */
+
+/* Card effect */
+.card {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 
 blockquote {
   margin: 0;
