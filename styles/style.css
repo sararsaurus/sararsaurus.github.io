@@ -38,12 +38,6 @@ body {
   padding-left: 20px;
 }
 
-/* personal image */
-/* .img {
-  width: 20%;
-  padding: 20px;
-} */
-
 /* Card effect */
 .card {
   background-color: white;
@@ -52,12 +46,11 @@ body {
 }
 
 /* Clear floats after the columns */
-/* .row:after {
+.row:after {
   content: "";
   display: table;
   clear: both;
-} */
-
+}
 
 blockquote {
   margin: 0;
