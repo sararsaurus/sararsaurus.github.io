@@ -6,15 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="styles/style.css" rel="stylesheet">
+  <script src="script.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
   <script>
     function addDarkmodeWidget() {
-      new Darkmode().showWidget();
+      new Darkmode(options).showWidget();
     }
     window.addEventListener('load', addDarkmodeWidget);
   </script>
   <script src="https://kit.fontawesome.com/b10e18ab8e.js" crossorigin="anonymous"></script>
   <title>Sara Raley</title>
+  
 </head>
 
 <body>
@@ -84,9 +86,10 @@
           <h4 id="learnings">learnings</h4>
           <ul>
           <li>Decided to dive back into some Arabic! It's been a hot minute/decade.</li>
-        </ul>
+       
           <br>
           <img class="screenshot" src="images/2023-02-16 14.09.45.gif" alt="gif demo">
+        </ul>
         </div>
       </div>
 
