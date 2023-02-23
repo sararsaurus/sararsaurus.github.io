@@ -157,11 +157,13 @@
 
             <h4 id="craftings">craftings</h4>
             Added some new functionality to my animal facts app. I learned how to make multiple things happen with one
-            <span style="background-color: #eee; border: 1px solid #999">onClick</span>
-            and how to change the color of different backgrounds. Essentially, it's been a deep dive into
+            <code class="codespan">onClick</code>
+            and how to change some background color. Essentially, it's been a deep dive into
             <a href="https://www.w3schools.com/js/js_htmldom.asp">
               JavaScript's capabilities to manipulate the HTML DOM.
             </a>
+            I used
+            <code class="codespan">getElementById</code>
 
             <br />
             <br />
@@ -196,7 +198,7 @@
             in the wild. I always like to do this with demos because I learn a lot more if I figure out how to make it
             actually work on my own computer. Plus, it's fun! In this case, I created all the CSS (and found the images
             - sorry), adapted the legacy React 17 stuff (no more
-            <span style="background-color: #eee; border: 1px solid #999">ReactDOM.render()</span>
+            <code class="codespan">ReactDOM.render()</code>
             ), and figured out how to translate it all into an app that I could locally host.
             <br />
             <br />
@@ -492,11 +494,9 @@
             Changing the terminal game I built last week from a demo helped me better understand how its unfamiliar code
             works. For example, the RNG generator uses Ruby's upto function to deploy different numbers of dice for
             different scenarios. So, if we have 2 dice, we'll run the loop twice, but if we have 3, we'll run it thrice:
-            <span style="background-color: #eee; border: 1px solid #999">1.upto(number_of_dice) do</span>
+            <code class="codespan">1.upto(number_of_dice) do</code>
             . I did, however, manage to break the gameplay... &#128539;
-
             <h4 id="learnings">learnings</h4>
-
             We did a lot during this week's THM Advent of Cyber challenges. We dove into malware's classic patterns,
             like establishing network connections, using registry keys, and downloading/creating files. We tackled the
             layers of defense necessary to secure file uploads and user inputs on a web app by learning about file
@@ -519,9 +519,7 @@
             <a href="https://regexone.com/">regexes</a>
             returned! Regexes, combined with HTML's built-in features, give us pretty granular control over user input.
             For example,
-            <span style="background-color: #eee; border: 1px solid #999">
-              input type="text" id="uname" name="uname" pattern="[a-zA-Z0-9]+"
-            </span>
+            <code class="codespan">input type="text" id="uname" name="uname" pattern="[a-zA-Z0-9]+"</code>
             will filter for a case-insensitive alphanumeric string.
             <br />
             <br />
@@ -589,7 +587,7 @@
             .select method. Turns out using .select on an array always creates a new array (therefore rendering
             unncessary my first attempt with a blank array and a conditional statement). Select is great when you want
             to filter a list and return an array with the results:
-            <span style="background-color: #eee; border: 1px solid #999">@tasks.select { |task| !task.completed }</span>
+            <code class="codespan">@tasks.select { |task| !task.completed }</code>
             .
             <br />
             <br />
@@ -602,7 +600,7 @@
             <br />
             I was trying to validate ISBNs and needed to make sure that the string contained only digits until the last
             character. And lo, my first regex (regexp?):
-            <span style="background-color: #eee; border: 1px solid #999">/\D/.match(isbn_string.chop)</span>
+            <code class="codespan">/\D/.match(isbn_string.chop)</code>
             .
             <br />
             <br />
@@ -611,7 +609,7 @@
             suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find and
             remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. (To be
             fair, I did unknowingly encounter them earlier with
-            <span style="background-color: #eee; border: 1px solid #999">grep</span>
+            <code class="codespan">grep</code>
             -- which, turns out, stands for global/regular expression/print. Here's a nifty
             <a href="https://swcarpentry.github.io/shell-novice/07-find/index.html" target="_blank">link</a>
             about finding things using the command line.)
@@ -660,7 +658,7 @@
             <br />
             <br />
             I tried using
-            <span style="background-color: #eee; border: 1px solid #999">nokogiri</span>
+            <code class="codespan">nokogiri</code>
             because my KML file is actually primarily composed of XML and HTML. I tested my code to print the doc to the
             terminal and for some reason it only pulled a small portion. It did, interestingly, include more DOM-like
             features than were visible in the KML file I was working with in in TextEdit.
@@ -676,11 +674,11 @@
             </a>
             ! We'll complete a task each day of the month and cover red teaming, cyber investigations, web exploitation,
             IoT hacking, and cyber defense &#127873; &#127876;. On Day 2, I learned how to use
-            <span style="background-color: #eee; border: 1px solid #999">nano</span>
+            <code class="codespan">nano</code>
             to get a sense for the data in a log file,
-            <span style="background-color: #eee; border: 1px solid #999">wc -l</span>
+            <code class="codespan">wc -l</code>
             to get the number of lines in it, and
-            <span style="background-color: #eee; border: 1px solid #999">grep</span>
+            <code class="codespan">grep</code>
             , which finds and prints lines that match a pattern, to search.
             <br />
             <br />
@@ -691,9 +689,9 @@
             <br />
             I was trying to write code that could tell if a string was all uppercase AND devoid of letters, and I was
             surprised to see that a fully numeric string was interpreted as uppercase. I eventually settled with
-            <span style="background-color: #eee; border: 1px solid #999">
+            <code class="codespan">
               elsif sentence == sentence.upcase && sentence.include?("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-            </span>
+            </code>
             but there's gotta be a better way.
             <br />
             <br />
@@ -740,21 +738,11 @@
             Getting at the key of a hash is tricky, but Ruby's
             <a href="https://www.rubyguides.com/ruby-tutorial/loops/" target="_blank">each method</a>
             helpfully offers an easy way to access it in a loop!
-            <pre>
-                  <code>
-                    items = { "chair" => 100, "book" => 14 }
-                    hash = {}
-                    items.each do |name, price|
-                    hash[name] = price
-                    end
-                    p hash
-                    # {"chair"=>100, "book"=>14}
-                  </code>
-                </pre>
-
-            Best practices for PTT radio use: No Hollywood lingo! Listen first before transmitting, rehearse what you're
-            going to say, depress the talk switch for 1-2 seconds before talking, and release the button when you're
-            done.
+            <br />
+            <code class="codespan">
+              items = { "chair" => 100, "book" => 14 } hash = {} items.each do |name, price| hash[name] = price end p
+              hash # {"chair"=>100, "book"=>14}
+            </code>
           </div>
         </div>
         <div class="card">

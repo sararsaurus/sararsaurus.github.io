@@ -141,3 +141,7 @@ pre code {
   }
 }
 
+.codespan {
+  font-size:105%;
+  background-color:#eee
+}
