@@ -163,11 +163,11 @@
               Completed THM's
               <a href="https://tryhackme.com/room/searchlightosint">Searchlight IMINT room,</a>
               which was created by one of the (now-former) OSINT Curious members. Good imagery intelligence, or IMINT,
-              starts with methodically decomposing the image and focusing on the context, foreground, and background,
-              noting any particular things like signs or landmarks along the way. The hardest part of this particular
-              challenge was identifying the photographer of a particular image; the image didn't show up in my reverse
-              image searches, so I looked at an embedded map in the official city tourism page and found it there. We
-              also experimented with
+              analysis starts with methodically decomposing the image and focusing on the context, foreground, and
+              background, noting any particular things like signs or landmarks along the way. The hardest part of this
+              particular challenge was identifying the photographer of a particular image; the image didn't show up in
+              my reverse image searches, so I looked at an embedded map in the official city tourism page and found it
+              there. We also experimented with
               <a href="https://ffmpeg.org/about.html">FFmpeg</a>
               , a tool to parse and process videos, although for this (relatively easy) exercise I found Google Earth
               Pro to be equally useful.
@@ -240,7 +240,7 @@
             <p>Takeaways:</p>
             <ul>
               <li>قابلة للبحث = searchable</li>
-              <li>القمامة = garbage</li>
+              <li>قمامة is another word for garbage (I'm more familiar with زبالة)</li>
             </ul>
             <p>
               أداة لتنظيم ملفات الصوت والفيديو وجعلها قابلة للبحث &#129535; A tool for organizing sound and video files
@@ -305,8 +305,8 @@
               with the
               <a href="https://github.com/sararsaurus/animal_fun_facts" target="_blank">animal facts app,</a>
               but in that case I just manipulated the DOM directly via
-              <code class="codespan">document.getElementById</code>
-              . This time we're going to do it the right way by using state. The funny thing is that I've used all these
+              <code class="codespan">document.getElementById.</code>
+              This time we're going to do it the right way by using state. The funny thing is that I've used all these
               concepts in more sophisticated ways before, particularly with
               <a href="https://github.com/sararsaurus/frontend-happy-trails" target="blank">SomeTrails,</a>
               but it takes doing and unpacking several times to really internalize it.
@@ -356,20 +356,6 @@
               the dark side of open source intelligence
             </a>
             is a stark reminder about what can happen when OSINT practitioners get sloppy.
-            <br />
-            <br />
-            I'm going to start translating BBC Arabic headlines to recover some of the vocabulary I used to have.
-            (Headlines are a lot more manageable than even a couple sentences, so it's a good place to start. Plus,
-            Google makes it easy to check my work.)
-            <br />
-            في تونس، سلسلة اعتقالات تؤكد "الوصول إلى نقطة اللاعودة
-            <br />
-            "In Tunisia, a series of arrests confirms 'reaching a point of no return'"
-            <br />
-            زلزال يضرب طاجكستان على الحدود مع الصين بقوة 7.2 درجة
-            <br />
-            A 7.2 magnitude earthquake hits Tajikistan along its border with China.
-
             <h4 id="Craftings">Craftings</h4>
             Added some new functionality to my animal facts app. I learned how to make multiple things happen with one
             <code class="codespan">onClick</code>
@@ -377,7 +363,16 @@
             <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">
               JavaScript's capabilities to manipulate the HTML DOM.
             </a>
-            I used the method
+            <br />
+            <br />
+            So, when a webpage is loaded, the browser (praise be for browsers!) creates a Document Object Model, or DOM,
+            of the page. That object model allows Javascript to change HTML elements and create &#9889; dynamic &#9889;
+            HTML. There are two key terms to know for this: methods and properties. Methods are actions you can perform
+            on HTML elements, and properties are the values of HTML elements that you can set or change. And, in a
+            nutshell, that's what I did for this project!
+            <br />
+            <br />
+            Specifically, I used the method
             <code class="codespan">getElementById</code>
             to access specific HTML elements, and then I used a couple different properties to do different things, like
             replace the content of HTML elements (
@@ -390,7 +385,7 @@
             <img class="screenshot" src="images/2023-02-23 11.30.05.gif" alt="gif demo" />
             <br />
             <br />
-            Playing with this prompted me look into how React
+            All of this prompted me look into how React
             <em>should</em>
             handle interactivity, which inexorably led to
             <a href="https://beta.reactjs.org/learn/state-a-components-memory" target="_blank">
@@ -411,6 +406,19 @@
             <br />
             original photo:
             <img class="small-screenshot" src="images/Screenshot 2023-02-17 at 5.12.49 PM.png" alt="photo of Tirana" />
+            <br />
+            <br />
+            I'm going to start translating BBC Arabic headlines to recover some of the vocabulary I used to have.
+            (Headlines are a lot more manageable than even a couple sentences, so it's a good place to start. Plus,
+            Google makes it easy to check my work.)
+            <br />
+            في تونس، سلسلة اعتقالات تؤكد "الوصول إلى نقطة اللاعودة
+            <br />
+            "In Tunisia, a series of arrests confirms 'reaching a point of no return'"
+            <br />
+            زلزال يضرب طاجكستان على الحدود مع الصين بقوة 7.2 درجة
+            <br />
+            A 7.2 magnitude earthquake hits Tajikistan along its border with China.
           </div>
         </div>
         <div class="card">
