@@ -12,7 +12,7 @@ const options = {
   label: "🌙", // default: ''
   autoMatchOsTheme: true, // default: true
 };
-// searchbar
+// animal searchbar
 function search_animal() {
   let input = document.getElementById("searchbar").value;
   input = input.toLowerCase();
