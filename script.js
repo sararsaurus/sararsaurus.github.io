@@ -1,6 +1,6 @@
 // darkmode
 const options = {
-  bottom: "32px", // default: '32px'
+  bottom: "unset", // default: '32px'
   right: "unset", // default: '32px'
   left: "32px", // default: 'unset'
   time: "0.5s", // default: '0.3s'
