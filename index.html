@@ -132,15 +132,49 @@
             <p>
               A network is just interconnected devices. The end! It's fascinating that everything we do, every day,
               relies on that not-so-simple statement. And for some reason, the typical liberal arts education ignores
-              the centrality of networks, not only to the human experience, but to international relations and
-              governance. This is for another day, but I think we're missing out on some very neat interdisciplinary
-              connects, like the fact that today the internet operates largely without massive international government
-              support or intervention.
+              the centrality of networks, not only to the human experience, but to international relations (or IR, as
+              I'll be calling it throughout the rest of this journey) and governance. This is for another day, but I
+              think we're missing out on some very neat interdisciplinary connections, like the fact that today the
+              internet operates largely without massive international government support or intervention.
               <br />
               <br />
               I imagine liberal arts prefers to keep networking in a safe silo because it's complicated and yet still
-              somewhat concrete; we're not just at liberty to create models and argue about how it actually works
-              (looking at you, economics).
+              somewhat concrete; we're just at liberty to create models and argue about how it actually works (looking
+              at you, economics).
+              <br />
+              <br />
+              Anyway, these networks can be different sizes and span different geographical breadths. LAN is just a
+              local area network, for example. But then it starts to get confusing (and this is probably where IR jumps
+              overboard): there are a couple different models to describe
+              <em>how</em>
+              a network works and then even within a single type of network there are different topologies. Let's start
+              with the models, which break networking into different layers to categorize the different, complicated
+              functions that are responsible for specific tasks. Most humans are really only familiar with
+              <em>part</em>
+              of one layer, the application layer (which is either one of seven layers in the OSI model or one of four
+              in the TCP/IP model): we use GUIs to send requests and receive data. I don't even know if that counts as
+              the tip of the iceberg; maybe it's just the initial snowfall on a glacier hundreds of years before a chunk
+              of ice calves into the sea.
+              <br />
+              <br />
+              Ok, so still within that application layer, we rely on network protocols - a set of standards (not
+              developed or maintained by any government-level entity, IR!) - to get the data transferring. The Domain
+              Name System (DNS) protocol converts domains to IP addresses, IMAP/POP/SMTP handle email, and the Hyper
+              Text Transfer Protocol (HTTP) handles our web requests to servers(and make our applicatons' basic CRUD
+              actions work). Opening the network tab in developer tools shows how many HTTP requests are required to
+              load a single specific website:
+              <br />
+              <br />
+              <img class="screenshot" src="images/Screenshot 2023-03-07 at 1.07.34 PM.png" alt="" />
+              <br />
+              <br />
+              Secure Shell (SSH) protocol enables access to a remote terminal or virtual machine over a secure
+              connection, File Transfer Protocol (FTP) does just that, and Server Message Block (SMB) protocol allows
+              users to interact with a remote system like a file share or printers.
+              <br />
+              <br />
+              Actually getting the data requires diving into another layer of the network model - the transport layer -
+              and that's where ports and important transport protocols come into play.
             </p>
 
             <h4 id="programming">Web Development</h4>
