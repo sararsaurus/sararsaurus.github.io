@@ -1,3 +1,4 @@
+// darkmode
 const options = {
   bottom: "32px", // default: '32px'
   right: "unset", // default: '32px'
@@ -11,3 +12,17 @@ const options = {
   label: "🌙", // default: ''
   autoMatchOsTheme: true, // default: true
 };
+// searchbar - not yet functional
+function search_topic() {
+  let input = document.getElementById("searchbar").value;
+  input = input.toLowerCase();
+  let x = document.getElementsByClassName("programming");
+
+  for (i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].style.display = "none";
+    } else {
+      x[i].style.display = "list-item";
+    }
+  }
+}
