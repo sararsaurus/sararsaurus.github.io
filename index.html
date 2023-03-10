@@ -115,6 +115,34 @@
     <div class="row">
       <div class="leftcolumn">
         <div class="card">
+          <div id="Mar1723" class="TIL">
+            <h3>
+              Weekly(ish) Roundup
+              <br />
+              17 March 2023
+            </h3>
+            <h4 id="programming" id="cybersecurity">HTML Injection</h4>
+            <p>
+              Thinking about adding a searchbar to my blog means I need to think about protecting against HTML
+              injection. Right now my code allows for
+              <em>any</em>
+              user input, and that means a user could, for example, insert HTML tags that link to a malicious website or
+              even conduct Cross-Site Scripting (XSS) attacks by sending malicious scripts to another unsuspecting end
+              user.
+              <br />
+              <br />
+              According to
+              <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">
+                OWASP,
+              </a>
+              ensuring that all variables go through validation and are then escaped or sanitized is known as perfect
+              injection resistance. (Side note, apparently React has some known XSS security gaps.) So, the question is
+              how do I do this for my little blog?
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
           <div id="Mar623" class="TIL">
             <h3>
               Weekly(ish) Roundup
