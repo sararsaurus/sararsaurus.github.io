@@ -15,9 +15,9 @@ const options = {
 // animal searchbar
 function search_animal() {
   let input = document.getElementById("searchbar").value;
-  input = input.toLowerCase();
+  input = DOMPurify.sanitize(input).toLowerCase();
+  document.getElementById("sanitized").innerHTML = input;
   let x = document.getElementsByClassName("animals");
-
   for (i = 0; i < x.length; i++) {
     if (!x[i].innerHTML.toLowerCase().includes(input)) {
       x[i].style.display = "none";

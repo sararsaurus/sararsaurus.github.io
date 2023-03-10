@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="styles/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="dist/purify.min.js"></script>
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script>
@@ -121,23 +122,31 @@
               <br />
               17 March 2023
             </h3>
-            <h4 id="programming" id="cybersecurity">HTML Injection</h4>
+            <h4 id="programming" id="cybersecurity">HTML & Javascript Injection</h4>
             <p>
-              Thinking about adding a searchbar to my blog means I need to think about protecting against HTML
-              injection. Right now my code allows for
-              <em>any</em>
-              user input, and that means a user could, for example, insert HTML tags that link to a malicious website or
-              even conduct Cross-Site Scripting (XSS) attacks by sending malicious scripts to another unsuspecting end
-              user.
+              Adding a search bar to my blog prompted me think about adding in some security to prevent malicious use.
+              As it's currently coded, my search bar doesn't allow a user to write HTML to the page, so something like
+              this doesn't actually work:
               <br />
               <br />
-              According to
+              <img src="images/Screenshot 2023-03-10 at 1.44.31 PM.png" alt="screenshot" />
+              <br />
+              <br />
+              But of course it's a best practice to sanitize any and all user input to prevent HTML or JavaScript
+              injections to redirect browsers, steal information, or conduct Cross-Site Scripting (XSS) attacks.
+              according to
               <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">
                 OWASP,
               </a>
               ensuring that all variables go through validation and are then escaped or sanitized is known as perfect
-              injection resistance. (Side note, apparently React has some known XSS security gaps.) So, the question is
-              how do I do this for my little blog?
+              injection resistance. (Side note, apparently React has some known XSS security gaps.) There are tons of
+              libraries and more available to do this, but I want to see how far I can get without them.
+              <br />
+              <br />
+              The first thing I can do is make sure any inserted HTML tags are instead parsed as inert plain text. I
+              thought that this might be another classic case of regex to the rescue, but turns out there are some
+              <a href="https://stackoverflow.com/a/1732454">very salty opinions</a>
+              against it.
             </p>
           </div>
         </div>
@@ -220,6 +229,7 @@
             <a href="https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/">This code</a>
             works, so that's a great place to start!
             <br />
+            <div id="sanitized"></div>
             <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals.." />
             <ol id="list">
               <li class="animals">Cat</li>
@@ -450,7 +460,7 @@
               <code class="codespan">componentDidUpdate.</code>
               <br />
               <br />
-              Or, in English, today's best practices use different Javascript syntax to create the code that serves as
+              Or, in English, today's best practices use different JavaScript syntax to create the code that serves as
               the fundamental building block for something that performs a
               <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank">
                 task.
@@ -525,7 +535,7 @@
             <br />
             <br />
             So, when a webpage is loaded, the browser (praise be for browsers!) creates a Document Object Model, or DOM,
-            of the page. That object model allows Javascript to change HTML elements and create &#9889; dynamic &#9889;
+            of the page. That object model allows JavaScript to change HTML elements and create &#9889; dynamic &#9889;
             HTML. There are two key terms to know for this: methods and properties. Methods are actions you can perform
             on HTML elements, and properties are the values of HTML elements that you can set or change. And, in a
             nutshell, that's what I did for this project!
