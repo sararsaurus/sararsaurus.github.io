@@ -125,28 +125,30 @@
             <h4 id="programming" id="cybersecurity">HTML & Javascript Injection</h4>
             <p>
               Adding a search bar to my blog prompted me think about adding in some security to prevent malicious use.
-              As it's currently coded, my search bar doesn't allow a user to write HTML to the page, so something like
-              this doesn't actually work:
+              My original search bar didn't allow a user to write HTML to the page, so something like this wouldn't
+              actually work:
               <br />
               <br />
               <img src="images/Screenshot 2023-03-10 at 1.44.31 PM.png" alt="screenshot" />
               <br />
               <br />
               But of course it's a best practice to sanitize any and all user input to prevent HTML or JavaScript
-              injections to redirect browsers, steal information, or conduct Cross-Site Scripting (XSS) attacks.
-              according to
-              <a href="https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html">
-                OWASP,
-              </a>
-              ensuring that all variables go through validation and are then escaped or sanitized is known as perfect
-              injection resistance. (Side note, apparently React has some known XSS security gaps.) There are tons of
-              libraries and more available to do this, but I want to see how far I can get without them.
-              <br />
-              <br />
-              The first thing I can do is make sure any inserted HTML tags are instead parsed as inert plain text. I
+              injections to redirect browsers, steal information, or conduct Cross-Site Scripting (XSS) attacks. I
               thought that this might be another classic case of regex to the rescue, but turns out there are some
               <a href="https://stackoverflow.com/a/1732454">very salty opinions</a>
-              against it.
+              against it. So I used
+              <a href="https://github.com/cure53/DOMPurify">DOMPurify</a>
+              instead:
+              <br />
+              <br />
+              <img src="images/Screenshot 2023-03-10 at 2.31.07 PM.png" alt="code" />
+              <br />
+              <br />
+              To work, DOMPurify needs to write HTML into the DOM element, so I had to add an
+              <code class="codespan">.innerHTML</code>
+              method that ties back to a placeholder
+              <code class="codespan">div</code>
+              in the HTML.
             </p>
           </div>
         </div>
@@ -218,7 +220,8 @@
               users to interact with a remote system like a file share or printers.
               <br />
               <br />
-              And then super important protocols like TCP and UDP live in the TCP/IP model's transport layer.
+              And then super important protocols like TCP and UDP live in the TCP/IP model's transport layer - and we
+              haven't even talked about the other layers!
             </p>
 
             <h4 id="programming">Web Development</h4>
