@@ -116,29 +116,19 @@
 
     <div class="row">
       <div class="leftcolumn">
-        <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals.." />
+        <input id="searchbar" onkeyup="search_word()" type="text" name="search" placeholder="Search.." />
         <ul style="list-style-type: none" id="list">
-          <li class="animals">Cat</li>
-          <li class="animals">Dog</li>
-          <li class="animals">Elephant</li>
-          <li class="animals">Fish</li>
-          <li class="animals">Gorilla</li>
-          <li class="animals">Monkey</li>
-          <li class="animals">Turtle</li>
-          <li class="animals">Whale</li>
-          <li class="animals">Aligator</li>
-          <li class="animals">Donkey</li>
-          <li class="animals">Horse</li>
-
           <div class="card">
             <div id="Mar1723" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
-                <br />
-                17 March 2023
-              </h3>
-              <li class="animals">
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  17 March 2023
+                </h3>
+
                 <h4 id="programming" id="cybersecurity">HTML & Javascript Injection</h4>
+
                 <p>
                   Adding a search bar to my blog prompted me think about adding in some security to prevent malicious
                   use. My original search bar didn't allow a user to write HTML to the page, so something like this
@@ -172,1043 +162,1093 @@
 
           <div class="card">
             <div id="Mar623" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
-                <br />
-                10 March 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
-              <a href="https://www.bbc.com/future/article/20200917-the-surprising-power-of-reading-aloud">
-                Why you should read this out loud
-              </a>
-              | "A growing body of research suggests that we may be missing out by reading only with the voices inside
-              our minds. The ancient art of reading aloud has a number of benefits for adults, from helping improve our
-              memories and understand complex texts, to strengthening emotional bonds between people."
-              <h4 id="networking">Network Fundamentals</h4>
-              <p>
-                A network is just interconnected devices. The end! It's fascinating that everything we do, every day,
-                relies on that not-so-simple statement. And for some reason, the typical liberal arts education ignores
-                the centrality of networks, not only to the human experience, but to international relations (IR) and
-                governance. This is for another day, but I think we're missing out on some very neat interdisciplinary
-                connections, like the fact that today the internet operates largely without massive international
-                government support or intervention.
-                <br />
-                <br />
-                I imagine liberal arts prefers to keep networking in a safe silo because it's complicated and yet still
-                concrete; we're not at liberty to create models and argue about how it actually works (looking at you,
-                economics).
-                <br />
-                <br />
-                Anyway, every device that can be connected to a network - a phone, a computer, a wireless speaker - has
-                a MAC (Media Access Control) address and, once connected, an IP address. A MAC address is unique to each
-                device and IP addresses can change from device to device, although they cannot be active simultaneously
-                more than once within the same network. The protocols - a set of standards (not developed or maintained
-                by any government-level entity, IR!) - IP addresses follow are the backbone of networking and enable
-                devices to communicate.
-                <br />
-                <br />
-                Networks can be different sizes and span different geographical breadths. LAN is just a local area
-                network, for example. But then it starts to get confusing (and this is probably where IR jumps
-                overboard). There are a couple different models to describe
-                <em>how</em>
-                a network works and then even within a single type of network there are different topologies. Let's
-                start with the models, which break networking into different layers to categorize the different,
-                complicated functions that are responsible for specific tasks. Most humans are really only familiar with
-                <em>part</em>
-                of one layer, the application layer (which is either one of seven layers in the OSI model, which is a
-                conceptual, neutral model, or one of four in the TCP/IP model, which specifically refers to how the
-                current Internet works): we use GUIs to send requests and receive data. I don't even know if that counts
-                as the tip of the iceberg; maybe it's just the initial snowfall on a glacier hundreds of years before a
-                chunk of ice calves into the sea.
-                <br />
-                <br />
-                Ok, so still within that application layer, we rely on network protocols to get the data transferring.
-                The Domain Name System (DNS) protocol converts domains to IP addresses, IMAP/POP/SMTP handle email, and
-                the Hyper Text Transfer Protocol (HTTP) handles our web requests to servers (and make our applications'
-                basic CRUD actions work). Opening the network tab in developer tools shows how many HTTP requests are
-                required to load a single specific website:
-                <br />
-                <br />
-                <img class="screenshot" src="images/Screenshot 2023-03-07 at 1.05.59 PM.png" alt="screenshot" />
-                <br />
-                <br />
-                Secure Shell (SSH) protocol enables access to a remote terminal or virtual machine over a secure
-                connection, File Transfer Protocol (FTP) does just that, and Server Message Block (SMB) protocol allows
-                users to interact with a remote system like a file share or printers.
-                <br />
-                <br />
-                And then super important protocols like TCP and UDP live in the TCP/IP model's transport layer - and we
-                haven't even talked about the other layers!
-              </p>
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  10 March 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
 
-              <h4 id="programming">Web Development</h4>
-              It's time to start figuring out how to add a search function to the blog, particularly because it covers
-              everything from crochet to programming to cybersecurity to OSINT to avalanche rescue - oh my!
-              <br />
-              <br />
-              <a href="https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/">This code</a>
-              works, so that's a great place to start!
-              <br />
-              <div id="sanitized"></div>
-              <!-- <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals.." />
-            <ol id="list">
-              <li class="animals">Cat</li>
-              <li class="animals">Dog</li>
-              <li class="animals">Elephant</li>
-              <li class="animals">Fish</li>
-              <li class="animals">Gorilla</li>
-              <li class="animals">Monkey</li>
-              <li class="animals">Turtle</li>
-              <li class="animals">Whale</li>
-              <li class="animals">Aligator</li>
-              <li class="animals">Donkey</li>
-              <li class="animals">Horse</li>
-            </ol> -->
-              <p>
-                Once again, the key to this kind of interactivity is the Javascript method
-                <code class="codespan">getElementById,</code>
-                which grabs the relevant HTML (in this case, the HTML with an id of "searchbar"). This time, we'll also
-                call
-                <code class="codespan">.value</code>
-                to capture the actual content of what a user types into the searchbar, not just the HTML element.
+                <a href="https://www.bbc.com/future/article/20200917-the-surprising-power-of-reading-aloud">
+                  Why you should read this out loud
+                </a>
+                | "A growing body of research suggests that we may be missing out by reading only with the voices inside
+                our minds. The ancient art of reading aloud has a number of benefits for adults, from helping improve
+                our memories and understand complex texts, to strengthening emotional bonds between people."
+
+                <h4 id="networking">Network Fundamentals</h4>
+                <p>
+                  A network is just interconnected devices. The end! It's fascinating that everything we do, every day,
+                  relies on that not-so-simple statement. And for some reason, the typical liberal arts education
+                  ignores the centrality of networks, not only to the human experience, but to international relations
+                  (IR) and governance. This is for another day, but I think we're missing out on some very neat
+                  interdisciplinary connections, like the fact that today the internet operates largely without massive
+                  international government support or intervention.
+                  <br />
+                  <br />
+                  I imagine liberal arts prefers to keep networking in a safe silo because it's complicated and yet
+                  still concrete; we're not at liberty to create models and argue about how it actually works (looking
+                  at you, economics).
+                  <br />
+                  <br />
+                  Anyway, every device that can be connected to a network - a phone, a computer, a wireless speaker -
+                  has a MAC (Media Access Control) address and, once connected, an IP address. A MAC address is unique
+                  to each device and IP addresses can change from device to device, although they cannot be active
+                  simultaneously more than once within the same network. The protocols - a set of standards (not
+                  developed or maintained by any government-level entity, IR!) - IP addresses follow are the backbone of
+                  networking and enable devices to communicate.
+                  <br />
+                  <br />
+                  Networks can be different sizes and span different geographical breadths. LAN is just a local area
+                  network, for example. But then it starts to get confusing (and this is probably where IR jumps
+                  overboard). There are a couple different models to describe
+                  <em>how</em>
+                  a network works and then even within a single type of network there are different topologies. Let's
+                  start with the models, which break networking into different layers to categorize the different,
+                  complicated functions that are responsible for specific tasks. Most humans are really only familiar
+                  with
+                  <em>part</em>
+                  of one layer, the application layer (which is either one of seven layers in the OSI model, which is a
+                  conceptual, neutral model, or one of four in the TCP/IP model, which specifically refers to how the
+                  current Internet works): we use GUIs to send requests and receive data. I don't even know if that
+                  counts as the tip of the iceberg; maybe it's just the initial snowfall on a glacier hundreds of years
+                  before a chunk of ice calves into the sea.
+                  <br />
+                  <br />
+                  Ok, so still within that application layer, we rely on network protocols to get the data transferring.
+                  The Domain Name System (DNS) protocol converts domains to IP addresses, IMAP/POP/SMTP handle email,
+                  and the Hyper Text Transfer Protocol (HTTP) handles our web requests to servers (and make our
+                  applications' basic CRUD actions work). Opening the network tab in developer tools shows how many HTTP
+                  requests are required to load a single specific website:
+                  <br />
+                  <br />
+                  <img class="screenshot" src="images/Screenshot 2023-03-07 at 1.05.59 PM.png" alt="screenshot" />
+                  <br />
+                  <br />
+                  Secure Shell (SSH) protocol enables access to a remote terminal or virtual machine over a secure
+                  connection, File Transfer Protocol (FTP) does just that, and Server Message Block (SMB) protocol
+                  allows users to interact with a remote system like a file share or printers.
+                  <br />
+                  <br />
+                  And then super important protocols like TCP and UDP live in the TCP/IP model's transport layer - and
+                  we haven't even talked about the other layers!
+                </p>
+
+                <h4 id="programming">Web Development</h4>
+                It's time to start figuring out how to add a search function to the blog, particularly because it covers
+                everything from crochet to programming to cybersecurity to OSINT to avalanche rescue - oh my!
                 <br />
                 <br />
-                <img class="screenshot" src="images/Screenshot 2023-03-07 at 10.27.12 AM.png" alt="" />
-                And we'll use
-                <code class="codespan">getElementsByClassName</code>
-                to loop over the relevant content to see if the user's input matches anything.
-              </p>
-              <h4 id="Arabic">Arabic</h4>
-              <p>التعلُّم</p>
-              <ul>
-                <li>I like the translation of تحمل as "portend" rather than "bear"</li>
-                <li>الوقود المحلي = domestic fuel. It was right on the tip of my tongue, but I couldn't remember</li>
-              </ul>
-              عاجل: رئيس وزراء فلسطين: تصريحات وزير المالية الإسرائيلي سموتريتش إرهابية وعنصرية وتحمل نذر تصعيد خطير ضد
-              الفلسطينيين &#129535; Urgent: Palestinian Prime Minister: Israeli Finance Minister Smotrich's remarks are
-              terrorist and racist and bear the threat of dangerous escalation against Palestinians
-              <br />
-              <br />
-              عاجل: الحكومة المصرية تقرر رفع أسعار الوقود المحلي بداية من صباح الخميس &#129535; Urgent: The Egyptian
-              Government decides to raise domestic fuel prices starting Thursday morning
+                <a href="https://www.geeksforgeeks.org/search-bar-using-html-css-and-javascript/">This code</a>
+                works, so that's a great place to start!
+                <br />
+                <!-- <div id="sanitized"></div> -->
+                <input
+                  id="searchbar2"
+                  onkeyup="search_animal()"
+                  type="text"
+                  name="search"
+                  placeholder="Search animals.."
+                />
+                <ol id="list">
+                  <li class="animals">Cat</li>
+                  <li class="animals">Dog</li>
+                  <li class="animals">Elephant</li>
+                  <li class="animals">Fish</li>
+                  <li class="animals">Gorilla</li>
+                  <li class="animals">Monkey</li>
+                  <li class="animals">Turtle</li>
+                  <li class="animals">Whale</li>
+                  <li class="animals">Aligator</li>
+                  <li class="animals">Donkey</li>
+                  <li class="animals">Horse</li>
+                </ol>
+                <p>
+                  Once again, the key to this kind of interactivity is the Javascript method
+                  <code class="codespan">getElementById,</code>
+                  which grabs the relevant HTML (in this case, the HTML with an id of "searchbar"). This time, we'll
+                  also call
+                  <code class="codespan">.value</code>
+                  to capture the actual content of what a user types into the searchbar, not just the HTML element.
+                  <br />
+                  <br />
+                  <img class="screenshot" src="images/Screenshot 2023-03-07 at 10.27.12 AM.png" alt="" />
+                  And we'll use
+                  <code class="codespan">getElementsByClassName</code>
+                  to loop over the relevant content to see if the user's input matches anything.
+                </p>
+                <h4 id="Arabic">Arabic</h4>
+                <p>التعلُّم</p>
+                <ul>
+                  <li>I like the translation of تحمل as "portend" rather than "bear"</li>
+                  <li>الوقود المحلي = domestic fuel. It was right on the tip of my tongue, but I couldn't remember</li>
+                </ul>
+                عاجل: رئيس وزراء فلسطين: تصريحات وزير المالية الإسرائيلي سموتريتش إرهابية وعنصرية وتحمل نذر تصعيد خطير
+                ضد الفلسطينيين &#129535; Urgent: Palestinian Prime Minister: Israeli Finance Minister Smotrich's remarks
+                are terrorist and racist and bear the threat of dangerous escalation against Palestinians
+                <br />
+                <br />
+                عاجل: الحكومة المصرية تقرر رفع أسعار الوقود المحلي بداية من صباح الخميس &#129535; Urgent: The Egyptian
+                Government decides to raise domestic fuel prices starting Thursday morning
+              </li>
             </div>
           </div>
+
           <div class="card">
             <div id="Mar123" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  1 March 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+                <a href="https://sector035.nl/articles/2023-08" target="_blank">Sector035's Week in OSINT #2023-08</a>
                 <br />
-                1 March 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
-              <a href="https://sector035.nl/articles/2023-08" target="_blank">Sector035's Week in OSINT #2023-08</a>
-              <br />
-              <br />
-              <a
-                href="https://gralhix.com/2023/01/18/geolocating-idps-in-south-sudan-by-tracking-down-a-facebook-users-movements/"
-              >
-                Geolocating IDPs in South Sudan by tracking down a Facebook user's movements
-              </a>
-              <br />
-              <br />
-              <a
-                href="https://www.codastory.com/newsletters/xi-leaves-no-doubt-that-he-is-on-team-putin/"
-                target="_blank"
-              >
-                Xi leaves no doubt that he is on Team Putin
-              </a>
-              <br />
-              <br />
-              <a href="https://osintcurio.us/2019/12/20/google-dorks/" target="_blank">Google Dorks</a>
-
-              <h4 id="OSINT">OSINT</h4>
-              <p>
-                <a href="https://gralhix.com/osint-exercise-006/" target="_blank">
-                  Sofia Santos - OSINT Exercise #006:
-                </a>
-                A
+                <br />
                 <a
-                  href="https://tineye.com/search/07b288b4dd99644736909b67382fcf6eeb4171c3?sort=score&order=desc&page=1"
+                  href="https://gralhix.com/2023/01/18/geolocating-idps-in-south-sudan-by-tracking-down-a-facebook-users-movements/"
+                >
+                  Geolocating IDPs in South Sudan by tracking down a Facebook user's movements
+                </a>
+                <br />
+                <br />
+                <a
+                  href="https://www.codastory.com/newsletters/xi-leaves-no-doubt-that-he-is-on-team-putin/"
                   target="_blank"
                 >
-                  TinEye
+                  Xi leaves no doubt that he is on Team Putin
                 </a>
-                reverse image search yielded 377 exact results dating to at least 2006, confirming that the photo in
-                question is not from a January 2023 attack.
                 <br />
                 <br />
-                <a href="https://gralhix.com/exercise-002/">Sofia Santos - OSINT Exercise #002:</a>
-                A
-                <a
-                  href="https://lens.google.com/search?p=AfVzNa-jPjJlx5KNf3UVEn49tC7z9AkFOWfErCGrX9HToCXYlIcS4spZcMlhm7a7LswyoqBGhtGEqYpZexqqYEwcWiY1tnMmyZItNtbYSjaSUUVeT9QQYRfsWujGa5KmDyNg7kJ7si6svxVGXAfo4v7dHgA6HzMdYduKcbGzMY-k8AxJfXIuEL7mwrDl_Nc0k8I4eU3u6DHW3Mhd5qVLRVshn4fF-cGYWi8ZfeOs93cz4QX4QhO5bpSOSHT-H6QT_bs3FqluBuyTc2558WBiHr4hVDxbe0UnRvrIJ-cVmZ2C-6Pib8yQboPiI15H6dIh-qQVH7ul6CmwTy6rE3Tw5e9o50QbMXfYjSPubv07maCNzjlhqHZwBNe0k0Hyb_tMbH7XiJdjYECwx570BpI17Dok7Z7T_Q%3D%3D&ep=cnts&re=df&s#lns=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIkVrY0tKRFppTWpkbVkyWTJMVE15WldFdE5HVm1ZeTA1TXpabExUbGlZV0kyWTJJeE1UQmpOaElmTUMxVFgyczNjVVZDU1UxUlkwODNkV0ZIYVhjMGNFeGhlV0kzYjJGU1p3PT0iLG51bGwsbnVsbCxudWxsLDIsbnVsbCxbbnVsbCxudWxsLG51bGwsW251bGwsW1s2MDg1MCwzMDM3NF0sWzM2NzAwLDU4NjExXV1dLDldLG51bGxd"
-                >
-                  Google Lens
-                </a>
-                reverse image search easily pulled the text in the picture and identified the Flinders Street Railway
-                Station in Melbourne. Plugging the coordinates into Google Earth Pro and accessing the street view
-                feature provided a more accurate perspective of the tall structures in view, and a simple Google search
-                yielded the heights for the buildings in question (although, of course, the first Google hit was for
-                something else &#128539;).
-                <br />
-                <br />
-                Completed THM's
-                <a href="https://tryhackme.com/room/searchlightosint">Searchlight IMINT room,</a>
-                which was created by one of the (now-former) OSINT Curious members. Good imagery intelligence, or IMINT,
-                analysis starts with methodically decomposing the image and focusing on the context, foreground, and
-                background, noting any particular things like signs or landmarks along the way. The hardest part of this
-                particular challenge was identifying the photographer of a particular image; the image didn't show up in
-                my reverse image searches, so I looked at an embedded map in the official city tourism page and found it
-                there. We also experimented with
-                <a href="https://ffmpeg.org/about.html">FFmpeg</a>
-                , a tool to parse and process videos, although for this (relatively easy) exercise I found Google Earth
-                Pro to be equally useful.
-              </p>
+                <a href="https://osintcurio.us/2019/12/20/google-dorks/" target="_blank">Google Dorks</a>
 
-              <h4 id="Linux">Linux</h4>
-              <p>
-                I wanted brush up on my Linux because it's been a few weeks since I followed
-                <a href="https://inteltechniques.com/book1.html">Michael Bazzell's</a>
-                instructions to create Linux virtual machines and install a bunch of OSINT tools.
-                <br />
-                <br />
-                Linux is simply another operating system, like your Mac or Windows OS, except that it's not subject to
-                the same restrictive licensing. Linux's open-source nature makes it free and customizable for specific
-                purposes, such as cybersecurity. Linux is also present in our daily lives - it serves as the OS for many
-                IoT devices.
-                <br />
-                <br />
-                For today's project I practiced using SSH (secure shell) connections to hook up to the command line of a
-                remote Linux machine and I revisited some commands that I don't use on a daily basis in my other
-                programming endeavors:
-              </p>
-              <ul>
-                <li>
-                  <code class="codespan">echo</code>
-                  repeats anything we type and in concert with operators can be a shortcut to create new files with
-                  content
-                </li>
-                <li>
-                  <code class="codespan">whoami</code>
-                  finds out what user we're currently logged in as
-                </li>
-                <li>
-                  <code class="codespan">cat</code>
-                  spits out the contents of a given file
-                </li>
-                <li>
-                  <code class="codespan">find</code>
-                  looks for specific file names, wildcards (e.g.,
-                  <code class="codespan">find -name *.txt</code>
-                  )
-                </li>
-                <li>
-                  <code class="codespan">grep</code>
-                  searches the contents of files for specific values
-                </li>
-                <li>
-                  <code class="codespan">file</code>
-                  outputs a file's type
-                </li>
-                <li>
-                  <code class="codespan">su</code>
-                  switches user
-                </li>
-                <li>
-                  <code class="codespan">ls -l</code>
-                  shows file permissions
-                </li>
-                <li>
-                  <code class="codespan">ps aux</code>
-                  shows running processes
-                </li>
-                <li>
-                  <code class="codespan">less</code>
-                  shows a file's contents one page/screen at a time
-                </li>
-              </ul>
+                <h4 id="OSINT">OSINT</h4>
+                <p>
+                  <a href="https://gralhix.com/osint-exercise-006/" target="_blank">
+                    Sofia Santos - OSINT Exercise #006:
+                  </a>
+                  A
+                  <a
+                    href="https://tineye.com/search/07b288b4dd99644736909b67382fcf6eeb4171c3?sort=score&order=desc&page=1"
+                    target="_blank"
+                  >
+                    TinEye
+                  </a>
+                  reverse image search yielded 377 exact results dating to at least 2006, confirming that the photo in
+                  question is not from a January 2023 attack.
+                  <br />
+                  <br />
+                  <a href="https://gralhix.com/exercise-002/">Sofia Santos - OSINT Exercise #002:</a>
+                  A
+                  <a
+                    href="https://lens.google.com/search?p=AfVzNa-jPjJlx5KNf3UVEn49tC7z9AkFOWfErCGrX9HToCXYlIcS4spZcMlhm7a7LswyoqBGhtGEqYpZexqqYEwcWiY1tnMmyZItNtbYSjaSUUVeT9QQYRfsWujGa5KmDyNg7kJ7si6svxVGXAfo4v7dHgA6HzMdYduKcbGzMY-k8AxJfXIuEL7mwrDl_Nc0k8I4eU3u6DHW3Mhd5qVLRVshn4fF-cGYWi8ZfeOs93cz4QX4QhO5bpSOSHT-H6QT_bs3FqluBuyTc2558WBiHr4hVDxbe0UnRvrIJ-cVmZ2C-6Pib8yQboPiI15H6dIh-qQVH7ul6CmwTy6rE3Tw5e9o50QbMXfYjSPubv07maCNzjlhqHZwBNe0k0Hyb_tMbH7XiJdjYECwx570BpI17Dok7Z7T_Q%3D%3D&ep=cnts&re=df&s#lns=W251bGwsbnVsbCxudWxsLG51bGwsbnVsbCxudWxsLG51bGwsIkVrY0tKRFppTWpkbVkyWTJMVE15WldFdE5HVm1ZeTA1TXpabExUbGlZV0kyWTJJeE1UQmpOaElmTUMxVFgyczNjVVZDU1UxUlkwODNkV0ZIYVhjMGNFeGhlV0kzYjJGU1p3PT0iLG51bGwsbnVsbCxudWxsLDIsbnVsbCxbbnVsbCxudWxsLG51bGwsW251bGwsW1s2MDg1MCwzMDM3NF0sWzM2NzAwLDU4NjExXV1dLDldLG51bGxd"
+                  >
+                    Google Lens
+                  </a>
+                  reverse image search easily pulled the text in the picture and identified the Flinders Street Railway
+                  Station in Melbourne. Plugging the coordinates into Google Earth Pro and accessing the street view
+                  feature provided a more accurate perspective of the tall structures in view, and a simple Google
+                  search yielded the heights for the buildings in question (although, of course, the first Google hit
+                  was for something else &#128539;).
+                  <br />
+                  <br />
+                  Completed THM's
+                  <a href="https://tryhackme.com/room/searchlightosint">Searchlight IMINT room,</a>
+                  which was created by one of the (now-former) OSINT Curious members. Good imagery intelligence, or
+                  IMINT, analysis starts with methodically decomposing the image and focusing on the context,
+                  foreground, and background, noting any particular things like signs or landmarks along the way. The
+                  hardest part of this particular challenge was identifying the photographer of a particular image; the
+                  image didn't show up in my reverse image searches, so I looked at an embedded map in the official city
+                  tourism page and found it there. We also experimented with
+                  <a href="https://ffmpeg.org/about.html">FFmpeg</a>
+                  , a tool to parse and process videos, although for this (relatively easy) exercise I found Google
+                  Earth Pro to be equally useful.
+                </p>
 
-              <h4 id="Arabic">Arabic</h4>
-              <p>التعلُّم</p>
-              <ul>
-                <li>قابلة للبحث = searchable</li>
-                <li>قمامة is another word for garbage (I'm more familiar with زبالة)</li>
-              </ul>
-              <p>
-                أداة لتنظيم ملفات الصوت والفيديو وجعلها قابلة للبحث &#129535; A tool for organizing sound and video
-                files and making them searchable
-              </p>
-              <p>
-                أول كأس عالم لجمع القمامة في اليابان..من البلد العربي الوحيد المشارك؟ &#129535; The first world cup to
-                college garbage in Japan. Who is the only Arab country participating?
-              </p>
+                <h4 id="Linux">Linux</h4>
+                <p>
+                  I wanted brush up on my Linux because it's been a few weeks since I followed
+                  <a href="https://inteltechniques.com/book1.html">Michael Bazzell's</a>
+                  instructions to create Linux virtual machines and install a bunch of OSINT tools.
+                  <br />
+                  <br />
+                  Linux is simply another operating system, like your Mac or Windows OS, except that it's not subject to
+                  the same restrictive licensing. Linux's open-source nature makes it free and customizable for specific
+                  purposes, such as cybersecurity. Linux is also present in our daily lives - it serves as the OS for
+                  many IoT devices.
+                  <br />
+                  <br />
+                  For today's project I practiced using SSH (secure shell) connections to hook up to the command line of
+                  a remote Linux machine and I revisited some commands that I don't use on a daily basis in my other
+                  programming endeavors:
+                </p>
+                <ul>
+                  <li>
+                    <code class="codespan">echo</code>
+                    repeats anything we type and in concert with operators can be a shortcut to create new files with
+                    content
+                  </li>
+                  <li>
+                    <code class="codespan">whoami</code>
+                    finds out what user we're currently logged in as
+                  </li>
+                  <li>
+                    <code class="codespan">cat</code>
+                    spits out the contents of a given file
+                  </li>
+                  <li>
+                    <code class="codespan">find</code>
+                    looks for specific file names, wildcards (e.g.,
+                    <code class="codespan">find -name *.txt</code>
+                    )
+                  </li>
+                  <li>
+                    <code class="codespan">grep</code>
+                    searches the contents of files for specific values
+                  </li>
+                  <li>
+                    <code class="codespan">file</code>
+                    outputs a file's type
+                  </li>
+                  <li>
+                    <code class="codespan">su</code>
+                    switches user
+                  </li>
+                  <li>
+                    <code class="codespan">ls -l</code>
+                    shows file permissions
+                  </li>
+                  <li>
+                    <code class="codespan">ps aux</code>
+                    shows running processes
+                  </li>
+                  <li>
+                    <code class="codespan">less</code>
+                    shows a file's contents one page/screen at a time
+                  </li>
+                </ul>
+
+                <h4 id="Arabic">Arabic</h4>
+                <p>التعلُّم</p>
+                <ul>
+                  <li>قابلة للبحث = searchable</li>
+                  <li>قمامة is another word for garbage (I'm more familiar with زبالة)</li>
+                </ul>
+                <p>
+                  أداة لتنظيم ملفات الصوت والفيديو وجعلها قابلة للبحث &#129535; A tool for organizing sound and video
+                  files and making them searchable
+                </p>
+                <p>
+                  أول كأس عالم لجمع القمامة في اليابان..من البلد العربي الوحيد المشارك؟ &#129535; The first world cup to
+                  college garbage in Japan. Who is the only Arab country participating?
+                </p>
+              </li>
             </div>
           </div>
 
           <div class="card">
             <div id="Feb2723" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  27 February 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+                <a href="https://risky.biz/andrewboyd/" target="_blank">
+                  Risky Business: An interview with Andrew Boyd, director of the CIA's Center for Cyber Intelligence
+                </a>
                 <br />
-                27 February 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
-              <a href="https://risky.biz/andrewboyd/" target="_blank">
-                Risky Business: An interview with Andrew Boyd, director of the CIA's Center for Cyber Intelligence
-              </a>
-              <br />
-              <br />
-              <a href="https://grammar-girl.simplecast.com/episodes/grant-faulkner/transcript" target="_blank">
-                Grammar Girl: How writing very short stories can improve all your writing (with Grant Faulkner)
-              </a>
-              <br />
-              <br />
-              <a href="https://www.bbc.co.uk/programmes/m001hfpc" target="_blank">BBC In Our Time: Superconductivity</a>
-              <br />
-              <br />
-              <a href="https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/" target="_blank">
-                Gentle Explanation of "this" in JavaScript
-              </a>
+                <br />
+                <a href="https://grammar-girl.simplecast.com/episodes/grant-faulkner/transcript" target="_blank">
+                  Grammar Girl: How writing very short stories can improve all your writing (with Grant Faulkner)
+                </a>
+                <br />
+                <br />
+                <a href="https://www.bbc.co.uk/programmes/m001hfpc" target="_blank">
+                  BBC In Our Time: Superconductivity
+                </a>
+                <br />
+                <br />
+                <a href="https://dmitripavlutin.com/gentle-explanation-of-this-in-javascript/" target="_blank">
+                  Gentle Explanation of "this" in JavaScript
+                </a>
 
-              <h4 class="programming">React</h4>
-              <p>
-                I wanted to tackle a project that would help me really understand React Hooks and what they were
-                designed to do, so I decided to refactor some
-                <a href="https://www.codecademy.com/learn/learn-react-introduction" target="_blank">
-                  old Codecademy code
-                </a>
-                that uses classes rather than functions and repetitive component lifecycle code like
-                <code class="codespan">componentDidMount</code>
-                and
-                <code class="codespan">componentDidUpdate.</code>
-                <br />
-                <br />
-                Or, in English, today's best practices use different JavaScript syntax to create the code that serves as
-                the fundamental building block for something that performs a
-                <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank">
-                  task.
-                </a>
-                And "component lifecycle code" is essentially how React gets your code onto the webpage, and the syntax
-                for doing that has also changed.
-                <br />
-                <br />
-                I simplified the project to start. I'll eventually turn this into a random color generator, but for now
-                I'm just going to create a button that changes its background color when clicked. I did something
-                similar with the
-                <a href="https://github.com/sararsaurus/animal_fun_facts" target="_blank">animal facts app,</a>
-                but in that case I just manipulated the DOM directly via
-                <code class="codespan">document.getElementById.</code>
-                This time we're going to do it the right way by using state. The funny thing is that I've used all these
-                concepts in more sophisticated ways before, particularly with
-                <a href="https://github.com/sararsaurus/frontend-happy-trails" target="blank">SomeTrails,</a>
-                but it takes doing and unpacking several times to really internalize it.
-              </p>
-              <h4 id="Arabic">Arabic</h4>
-              <p>التعلُّم</p>
-              <ul>
-                <li>I initially translated الاتحاد as "union"</li>
-                <li>I didn't remember مزاعم ("allegations")</li>
-                <li>
-                  Apparently I never learned "drone," so I translated it word-for-word as "plane without a pilot" (طائرة
-                  بدون طيار) &#128541;
-                </li>
-              </ul>
-              <p>
-                رئيس الاتحاد الفرنسي لكرة القدم يستقيل من منصبه بعد مزاعم بالتحرش الجنسي &#129535; The president of the
-                French Football Federation resigns after allegations of sexual harassment
-              </p>
-              <p>
-                روسيا وأوكرانيا: تحطم طائرة بدون طيار بالقرب من موسكو في هجوم تصفه روسيا بأنه "فاشل &#129535; Russia and
-                Ukraine: A drone crashes near Moscow in attack Russia calls 'failed'
-              </p>
+                <h4 class="programming">React</h4>
+                <p>
+                  I wanted to tackle a project that would help me really understand React Hooks and what they were
+                  designed to do, so I decided to refactor some
+                  <a href="https://www.codecademy.com/learn/learn-react-introduction" target="_blank">
+                    old Codecademy code
+                  </a>
+                  that uses classes rather than functions and repetitive component lifecycle code like
+                  <code class="codespan">componentDidMount</code>
+                  and
+                  <code class="codespan">componentDidUpdate.</code>
+                  <br />
+                  <br />
+                  Or, in English, today's best practices use different JavaScript syntax to create the code that serves
+                  as the fundamental building block for something that performs a
+                  <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions" target="_blank">
+                    task.
+                  </a>
+                  And "component lifecycle code" is essentially how React gets your code onto the webpage, and the
+                  syntax for doing that has also changed.
+                  <br />
+                  <br />
+                  I simplified the project to start. I'll eventually turn this into a random color generator, but for
+                  now I'm just going to create a button that changes its background color when clicked. I did something
+                  similar with the
+                  <a href="https://github.com/sararsaurus/animal_fun_facts" target="_blank">animal facts app,</a>
+                  but in that case I just manipulated the DOM directly via
+                  <code class="codespan">document.getElementById.</code>
+                  This time we're going to do it the right way by using state. The funny thing is that I've used all
+                  these concepts in more sophisticated ways before, particularly with
+                  <a href="https://github.com/sararsaurus/frontend-happy-trails" target="blank">SomeTrails,</a>
+                  but it takes doing and unpacking several times to really internalize it.
+                </p>
+                <h4 id="Arabic">Arabic</h4>
+                <p>التعلُّم</p>
+                <ul>
+                  <li>I initially translated الاتحاد as "union"</li>
+                  <li>I didn't remember مزاعم ("allegations")</li>
+                  <li>
+                    Apparently I never learned "drone," so I translated it word-for-word as "plane without a pilot"
+                    (طائرة بدون طيار) &#128541;
+                  </li>
+                </ul>
+                <p>
+                  رئيس الاتحاد الفرنسي لكرة القدم يستقيل من منصبه بعد مزاعم بالتحرش الجنسي &#129535; The president of
+                  the French Football Federation resigns after allegations of sexual harassment
+                </p>
+                <p>
+                  روسيا وأوكرانيا: تحطم طائرة بدون طيار بالقرب من موسكو في هجوم تصفه روسيا بأنه "فاشل &#129535; Russia
+                  and Ukraine: A drone crashes near Moscow in attack Russia calls 'failed'
+                </p>
+              </li>
             </div>
           </div>
 
           <div class="card">
             <div id="Feb2723" class="announcement">
-              <h3>Announcement</h3>
-              <p>
-                In future updates I'll be replacing craftings/learnings with thematic buckets to better delineate my
-                &#127797; wildly &#127797; different projects.
-              </p>
+              <li class="words">
+                <h3>Announcement</h3>
+                <p>
+                  In future updates I'll be replacing craftings/learnings with thematic buckets to better delineate my
+                  &#127797; wildly &#127797; different projects.
+                </p>
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Feb1423" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  22 February 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+                <a href="https://sector035.nl/articles/2023-06" target="_blank">Sector035's Week in OSINT #2023-06</a>
+                | This article focuses on the importance of methodically following the intelligence process for any
+                OSINT investigation and its link about &#11088;
+                <a
+                  href="https://www.codastory.com/authoritarian-tech/negatives-open-source-intelligence/"
+                  target="_blank"
+                >
+                  the dark side of open source intelligence
+                </a>
+                is a stark reminder about what can happen when OSINT practitioners get sloppy.
+                <h4 id="Craftings">Craftings</h4>
+                Added some new functionality to my animal facts app. I learned how to make multiple things happen with
+                one
+                <code class="codespan">onClick</code>
+                and took a deep dive into
+                <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">
+                  JavaScript's capabilities to manipulate the HTML DOM.
+                </a>
                 <br />
-                22 February 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
-              <a href="https://sector035.nl/articles/2023-06" target="_blank">Sector035's Week in OSINT #2023-06</a>
-              | This article focuses on the importance of methodically following the intelligence process for any OSINT
-              investigation and its link about &#11088;
-              <a
-                href="https://www.codastory.com/authoritarian-tech/negatives-open-source-intelligence/"
-                target="_blank"
-              >
-                the dark side of open source intelligence
-              </a>
-              is a stark reminder about what can happen when OSINT practitioners get sloppy.
-              <h4 id="Craftings">Craftings</h4>
-              Added some new functionality to my animal facts app. I learned how to make multiple things happen with one
-              <code class="codespan">onClick</code>
-              and took a deep dive into
-              <a href="https://www.w3schools.com/js/js_htmldom.asp" target="_blank">
-                JavaScript's capabilities to manipulate the HTML DOM.
-              </a>
-              <br />
-              <br />
-              So, when a webpage is loaded, the browser (praise be for browsers!) creates a Document Object Model, or
-              DOM, of the page. That object model allows JavaScript to change HTML elements and create &#9889; dynamic
-              &#9889; HTML. There are two key terms to know for this: methods and properties. Methods are actions you
-              can perform on HTML elements, and properties are the values of HTML elements that you can set or change.
-              And, in a nutshell, that's what I did for this project!
-              <br />
-              <br />
-              Specifically, I used the method
-              <code class="codespan">getElementById</code>
-              to access specific HTML elements, and then I used a couple different properties to do different things,
-              like replace the content of HTML elements (
-              <code class="codespan">innerHTML</code>
-              ) or change the value of an HTML attribute (
-              <code class="codespan">.attribute</code>
-              ).
-              <br />
-              <br />
-              <img class="screenshot" src="images/2023-02-23 11.30.05.gif" alt="gif demo" />
-              <br />
-              <br />
-              All of this prompted me look into how React
-              <em>should</em>
-              handle interactivity, which inexorably led to
-              <a href="https://beta.reactjs.org/learn/state-a-components-memory" target="_blank">
-                React's state management
-              </a>
-              (because, of course, state is how a React component 'remembers' things. And, as I always need to remind
-              myself, hooks are just special functions that allow components to use React features like state).
-              But...I'm not even using state with this app! &#128576;
+                <br />
+                So, when a webpage is loaded, the browser (praise be for browsers!) creates a Document Object Model, or
+                DOM, of the page. That object model allows JavaScript to change HTML elements and create &#9889; dynamic
+                &#9889; HTML. There are two key terms to know for this: methods and properties. Methods are actions you
+                can perform on HTML elements, and properties are the values of HTML elements that you can set or change.
+                And, in a nutshell, that's what I did for this project!
+                <br />
+                <br />
+                Specifically, I used the method
+                <code class="codespan">getElementById</code>
+                to access specific HTML elements, and then I used a couple different properties to do different things,
+                like replace the content of HTML elements (
+                <code class="codespan">innerHTML</code>
+                ) or change the value of an HTML attribute (
+                <code class="codespan">.attribute</code>
+                ).
+                <br />
+                <br />
+                <img class="screenshot" src="images/2023-02-23 11.30.05.gif" alt="gif demo" />
+                <br />
+                <br />
+                All of this prompted me look into how React
+                <em>should</em>
+                handle interactivity, which inexorably led to
+                <a href="https://beta.reactjs.org/learn/state-a-components-memory" target="_blank">
+                  React's state management
+                </a>
+                (because, of course, state is how a React component 'remembers' things. And, as I always need to remind
+                myself, hooks are just special functions that allow components to use React features like state).
+                But...I'm not even using state with this app! &#128576;
 
-              <h4 id="learnings">Learnings</h4>
-              Solved this
-              <a href="https://twitter.com/quiztime" target="_blank">Wednesday Quiz!</a>
-              The photo, which didn't have any available EXIF data, was taken on the at the intersection of Rruga Qemal
-              Stafa and Rruga e Saraçeve in Tirana, Albania. Homing in on the small street sign got me to Tirana. Then I
-              looked for intersections that would be closed - turns out it's a one-way street - and then for a bike
-              shop. And voila!
-              <br />
-              <br />
-              <img
-                class="small-screenshot"
-                src="images/Screenshot 2023-02-17 at 5.12.49 PM.png"
-                alt="photo of Tirana"
-              />
-              <br />
-              <br />
-              I'm going to start translating BBC Arabic headlines to recover some of the vocabulary I used to have.
-              Headlines are a lot more manageable than even a couple sentences, so it's a good place to start. (Plus,
-              Google Translate makes it easy to check my work.)
-              <br />
-              <p>التعلُّم</p>
-              <ul>
-                <li>I hadn't previously thought about using قوة for magnitude, but it makes perfect sense!</li>
-              </ul>
-              <p>
-                "في تونس، سلسلة اعتقالات تؤكد "الوصول إلى نقطة اللاعودة &#129535; In Tunisia, a series of arrests
-                confirms 'reaching a point of no return'
-              </p>
-              <p>
-                زلزال يضرب طاجكستان على الحدود مع الصين بقوة 7.2 درجة &#129535; A 7.2 magnitude earthquake hits
-                Tajikistan along its border with China.
-              </p>
+                <h4 id="learnings">Learnings</h4>
+                Solved this
+                <a href="https://twitter.com/quiztime" target="_blank">Wednesday Quiz!</a>
+                The photo, which didn't have any available EXIF data, was taken on the at the intersection of Rruga
+                Qemal Stafa and Rruga e Saraçeve in Tirana, Albania. Homing in on the small street sign got me to
+                Tirana. Then I looked for intersections that would be closed - turns out it's a one-way street - and
+                then for a bike shop. And voila!
+                <br />
+                <br />
+                <img
+                  class="small-screenshot"
+                  src="images/Screenshot 2023-02-17 at 5.12.49 PM.png"
+                  alt="photo of Tirana"
+                />
+                <br />
+                <br />
+                I'm going to start translating BBC Arabic headlines to recover some of the vocabulary I used to have.
+                Headlines are a lot more manageable than even a couple sentences, so it's a good place to start. (Plus,
+                Google Translate makes it easy to check my work.)
+                <br />
+                <p>التعلُّم</p>
+                <ul>
+                  <li>I hadn't previously thought about using قوة for magnitude, but it makes perfect sense!</li>
+                </ul>
+                <p>
+                  "في تونس، سلسلة اعتقالات تؤكد "الوصول إلى نقطة اللاعودة &#129535; In Tunisia, a series of arrests
+                  confirms 'reaching a point of no return'
+                </p>
+                <p>
+                  زلزال يضرب طاجكستان على الحدود مع الصين بقوة 7.2 درجة &#129535; A 7.2 magnitude earthquake hits
+                  Tajikistan along its border with China.
+                </p>
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Feb1423" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  14 February 2023
+                </h3>
+                <h4 id="Craftings">Craftings</h4>
+                I started building out a Codecademy project so that it could live
+                <a href="https://github.com/sararsaurus/animal_fun_facts" target="_blank">free</a>
+                in the wild. I always like to do this with demos because I learn a lot more if I figure out how to make
+                it actually work on my own computer. Plus, it's fun! In this case, I created all the CSS (and found the
+                images - regrettably), adapted the legacy React 17 stuff (no more
+                <code class="codespan">ReactDOM.render()</code>
+                ), and figured out how to translate it all into an app that I could locally host.
                 <br />
-                14 February 2023
-              </h3>
-              <h4 id="Craftings">Craftings</h4>
-              I started building out a Codecademy project so that it could live
-              <a href="https://github.com/sararsaurus/animal_fun_facts" target="_blank">free</a>
-              in the wild. I always like to do this with demos because I learn a lot more if I figure out how to make it
-              actually work on my own computer. Plus, it's fun! In this case, I created all the CSS (and found the
-              images - regrettably), adapted the legacy React 17 stuff (no more
-              <code class="codespan">ReactDOM.render()</code>
-              ), and figured out how to translate it all into an app that I could locally host.
-              <br />
-              <br />
-              The code itself is also pretty cool. It simply uses another React file to generate the data (kind of a
-              backend shortcut), and then iterates through that data. Next step is to add some new functionality, like
-              making an image change color, disappear, or resize when clicked.
+                <br />
+                The code itself is also pretty cool. It simply uses another React file to generate the data (kind of a
+                backend shortcut), and then iterates through that data. Next step is to add some new functionality, like
+                making an image change color, disappear, or resize when clicked.
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Feb0723" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  07 February 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                &#11088;
+                <a href="https://risky.biz/RB693/" target="_blank">
+                  Risky Business #693: Hive takedown is the beginning, not the end
+                </a>
                 <br />
-                07 February 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                <a href="https://www.thesharpendpodcast.com/episode-84" target="_blank">
+                  The Sharp End Episode 84: A Lead Fall on The Sun Wall at Looking-Glass Rock
+                </a>
+                <br />
+                <br />
+                <a href="https://hiddenbrain.org/podcast/how-to-complain-productively/" target="_blank">
+                  Hidden Brain: How To Complain Productively
+                </a>
+                | The main takeaway is a good one: be mindful of your complaining; chances are it's hurting more than
+                it's helping.
+                <br />
+                <br />
+                <a href="https://hiddenbrain.org/podcast/thriving-in-the-face-of-contradiction/" target="_blank">
+                  Hidden Brain: Thriving in the Face of Contradiction
+                </a>
+                | I didn't love this episode, but I really loved the message. We need to be able to create space for
+                paradoxes and contradictions to coexist. It's almost always both/and, rather than either/or.
 
-              &#11088;
-              <a href="https://risky.biz/RB693/" target="_blank">
-                Risky Business #693: Hive takedown is the beginning, not the end
-              </a>
-              <br />
-              <br />
-              <a href="https://www.thesharpendpodcast.com/episode-84" target="_blank">
-                The Sharp End Episode 84: A Lead Fall on The Sun Wall at Looking-Glass Rock
-              </a>
-              <br />
-              <br />
-              <a href="https://hiddenbrain.org/podcast/how-to-complain-productively/" target="_blank">
-                Hidden Brain: How To Complain Productively
-              </a>
-              | The main takeaway is a good one: be mindful of your complaining; chances are it's hurting more than it's
-              helping.
-              <br />
-              <br />
-              <a href="https://hiddenbrain.org/podcast/thriving-in-the-face-of-contradiction/" target="_blank">
-                Hidden Brain: Thriving in the Face of Contradiction
-              </a>
-              | I didn't love this episode, but I really loved the message. We need to be able to create space for
-              paradoxes and contradictions to coexist. It's almost always both/and, rather than either/or.
+                <h4 id="Craftings">Craftings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
+                Followed
+                <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">this demo</a>
+                to create a tic-tac-toe game that focused a lot on lifting React's state each time we refactored
+                components.
+                <em>Lifting state</em>
+                is what we do to enable components to share data and always update together. I know that somehow this is
+                the key to connecting my Mapbox terrain map to my trails in SomeTrails, but I don't quite have it yet.
+                <h4 id="learnings">Learnings</h4>
 
-              Followed
-              <a href="https://beta.reactjs.org/learn/tutorial-tic-tac-toe" target="_blank">this demo</a>
-              to create a tic-tac-toe game that focused a lot on lifting React's state each time we refactored
-              components.
-              <em>Lifting state</em>
-              is what we do to enable components to share data and always update together. I know that somehow this is
-              the key to connecting my Mapbox terrain map to my trails in SomeTrails, but I don't quite have it yet.
-              <h4 id="learnings">Learnings</h4>
-
-              Completed my AIARE 1! I really loved the intersection of science (snow, weather, fracture mechanics),
-              heuristics, ethics, and team dynamics. When it comes to avalanche safety, how our group works together is
-              critical to whether we all come home at the end of the day. We travel and decide together, we genuinely
-              listen to every voice, we constantly challenge assumptions, and everyone gets a veto. As
-              <a href="https://thepowdercloud.com/learn/avalanche-education/team-decision-making/" target="_blank">
-                this article
-              </a>
-              put it:
-              <figure>
-                <blockquote>
-                  <p>
-                    Decision-making moments are where well-built teams shine. Teams help to limit the effects of adverse
-                    human factors on our choices and make sure our actions remain in line with our team mindset and
-                    terrain-use plan...Cultivating backcountry teams with a shared vision and approach gives us
-                    confidence that our teammates will respect each other's opinions, perspectives, and feelings as we
-                    plan and execute backcountry experiences together. We understand that this is how we rely on each
-                    other to enjoy the backcountry, and how we live on to cherish the memories we create together in the
-                    mountains. Teams work best when we give each other the courage to speak up and listen.
-                  </p>
-                </blockquote>
-              </figure>
-              <br />
-              My snow pit revealed a small wind slab on the top, a pretty solid midpack, and a super weak layer of basal
-              facets underneath.
-              <br />
-              <img class="small-screenshot" src="images/IMG_1096.jpeg" alt="snow pit" />
-              <br />
+                Completed my AIARE 1! I really loved the intersection of science (snow, weather, fracture mechanics),
+                heuristics, ethics, and team dynamics. When it comes to avalanche safety, how our group works together
+                is critical to whether we all come home at the end of the day. We travel and decide together, we
+                genuinely listen to every voice, we constantly challenge assumptions, and everyone gets a veto. As
+                <a href="https://thepowdercloud.com/learn/avalanche-education/team-decision-making/" target="_blank">
+                  this article
+                </a>
+                put it:
+                <figure>
+                  <blockquote>
+                    <p>
+                      Decision-making moments are where well-built teams shine. Teams help to limit the effects of
+                      adverse human factors on our choices and make sure our actions remain in line with our team
+                      mindset and terrain-use plan...Cultivating backcountry teams with a shared vision and approach
+                      gives us confidence that our teammates will respect each other's opinions, perspectives, and
+                      feelings as we plan and execute backcountry experiences together. We understand that this is how
+                      we rely on each other to enjoy the backcountry, and how we live on to cherish the memories we
+                      create together in the mountains. Teams work best when we give each other the courage to speak up
+                      and listen.
+                    </p>
+                  </blockquote>
+                </figure>
+                <br />
+                My snow pit revealed a small wind slab on the top, a pretty solid midpack, and a super weak layer of
+                basal facets underneath.
+                <br />
+                <img class="small-screenshot" src="images/IMG_1096.jpeg" alt="snow pit" />
+                <br />
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Jan2223" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  22 January 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                <a
+                  href="https://open.spotify.com/episode/0qRih5ml5oKDf7KU5ZWN3H?si=T65GtZDzQbWYhyvxY3bZJw"
+                  target="_blank"
+                >
+                  the CYBER5 episode 87: Attribution of Threat Actors
+                </a>
+
+                <h4 id="Craftings">Craftings</h4>
+
+                Created a full-stack
+                <a href="https://github.com/sararsaurus/dictionary-frontend" target="_blank">Rails/React app</a>
+                that allows user to query a third-party API. Putting these pieces together helped me internalize that
+                the calls to the third-party API are indeed populating my own local database, which is how the model and
+                controller are able to generate the data the user sees.
                 <br />
-                22 January 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
-
-              <a
-                href="https://open.spotify.com/episode/0qRih5ml5oKDf7KU5ZWN3H?si=T65GtZDzQbWYhyvxY3bZJw"
-                target="_blank"
-              >
-                the CYBER5 episode 87: Attribution of Threat Actors
-              </a>
-
-              <h4 id="Craftings">Craftings</h4>
-
-              Created a full-stack
-              <a href="https://github.com/sararsaurus/dictionary-frontend" target="_blank">Rails/React app</a>
-              that allows user to query a third-party API. Putting these pieces together helped me internalize that the
-              calls to the third-party API are indeed populating my own local database, which is how the model and
-              controller are able to generate the data the user sees.
-              <br />
-              <img class="screenshot" src="images/2023-02-10 14.03.30.gif" alt="gif demo" />
-              <br />
-              <img class="screenshot" src="images/dictionary backend.png" alt="code" />
-              <br />
-              <img class="screenshot" src="images/dictionary frontend.png" alt="code" />
+                <img class="screenshot" src="images/2023-02-10 14.03.30.gif" alt="gif demo" />
+                <br />
+                <img class="screenshot" src="images/dictionary backend.png" alt="code" />
+                <br />
+                <img class="screenshot" src="images/dictionary frontend.png" alt="code" />
+              </li>
             </div>
           </div>
 
           <div class="card">
             <div id="Jan1523" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  15 January 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                &#11088;
+                <a
+                  href="https://open.spotify.com/episode/3AL4Y5nAjt8OxfT1SdIVqM?si=Pybuuur2ShWXSwJ93ySifw"
+                  target="_blank"
+                >
+                  Darknet Diaries episode 109: TeaMpOisoN
+                </a>
                 <br />
-                15 January 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                <a
+                  href="https://open.spotify.com/episode/1wy0YQ5KZMiijIExWDlBEw?si=ViuHTk6SRdmn0kQ1Bnx7mQ"
+                  target="_blank"
+                >
+                  Darknet Diaries episode 128 & 129: Gollumfun (Parts 1 & 2)
+                </a>
 
-              &#11088;
-              <a
-                href="https://open.spotify.com/episode/3AL4Y5nAjt8OxfT1SdIVqM?si=Pybuuur2ShWXSwJ93ySifw"
-                target="_blank"
-              >
-                Darknet Diaries episode 109: TeaMpOisoN
-              </a>
-              <br />
-              <br />
-              <a
-                href="https://open.spotify.com/episode/1wy0YQ5KZMiijIExWDlBEw?si=ViuHTk6SRdmn0kQ1Bnx7mQ"
-                target="_blank"
-              >
-                Darknet Diaries episode 128 & 129: Gollumfun (Parts 1 & 2)
-              </a>
+                <h4 id="Craftings">Craftings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
-
-              The first version of SomeTrails is complete! The
-              <a href="https://github.com/sararsaurus/backend-happy-trails-api" target="_blank">backend</a>
-              and
-              <a href="https://github.com/sararsaurus/frontend-happy-trails" target="_blank">frontend</a>
-              repos have info about the code, and this demo shows you what it's like in action!
-              <br />
-              I managed to surprise myself by figuring out how to integrate two separate third-party APIs (one of them
-              in two different ways), how to add some interactivity to the terrain map, and how to embed twitter feeds!
-              <br />
-              <img class="screenshot" src="images/2023-02-10 14.44.45.gif" alt="gif demo" />
+                The first version of SomeTrails is complete! The
+                <a href="https://github.com/sararsaurus/backend-happy-trails-api" target="_blank">backend</a>
+                and
+                <a href="https://github.com/sararsaurus/frontend-happy-trails" target="_blank">frontend</a>
+                repos have info about the code, and this demo shows you what it's like in action!
+                <br />
+                I managed to surprise myself by figuring out how to integrate two separate third-party APIs (one of them
+                in two different ways), how to add some interactivity to the terrain map, and how to embed twitter
+                feeds!
+                <br />
+                <img class="screenshot" src="images/2023-02-10 14.44.45.gif" alt="gif demo" />
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="01Jan23" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  01 January 2023
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                &#11088;
+                <a href="https://open.spotify.com/episode/0UCTRy5frRHxD6SktX9dbV" target="_blank">
+                  Darknet Diaries episode 130: Jason's Pen Test
+                </a>
                 <br />
-                01 January 2023
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                <a href="https://open.spotify.com/episode/18EnUCmYroHyHEo9wka2d9" target="_blank">
+                  Darknet Diaries episode 94: Mariposa
+                </a>
 
-              &#11088;
-              <a href="https://open.spotify.com/episode/0UCTRy5frRHxD6SktX9dbV" target="_blank">
-                Darknet Diaries episode 130: Jason's Pen Test
-              </a>
-              <br />
-              <br />
-              <a href="https://open.spotify.com/episode/18EnUCmYroHyHEo9wka2d9" target="_blank">
-                Darknet Diaries episode 94: Mariposa
-              </a>
+                <h4 id="Craftings">Craftings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
+                Got some simple query parameters working! A user can now type a search term into the browser to change
+                the call that my Rails backend is making to a free third-party API.
+                <img class="screenshot" src="images/Screenshot 2022-12-29 at 8.56.50 PM.png" alt="code" />
+                <img class="screenshot" src="images/Screenshot 2022-12-29 at 9.02.32 PM.png" alt="browser" />
+                <br />
+                And since I was on a roll, I added to my amigurumi store the capability for a user to filter the
+                category of available products. When I get to my frontend, I'll need to figure out how to create a
+                button or form to intake the query parameters.
+                <img class="screenshot" src="images/Screenshot 2022-12-29 at 6.39.55 PM.png" alt="code" />
+                <br />
+                Started figuring out how to use info from a CSV file - a common format for a lot of data. Fortunately,
+                Ruby is ready for this and all we need to do is use that built-in functionality with a loop instructing
+                Rails how to pull the data into the database (credit to
+                <a href="https://itnext.io/how-to-seed-a-rails-database-with-a-csv-file-105a7ba0e88c" target="_blank">
+                  this Medium article
+                </a>
+                .)
 
-              Got some simple query parameters working! A user can now type a search term into the browser to change the
-              call that my Rails backend is making to a free third-party API.
-              <img class="screenshot" src="images/Screenshot 2022-12-29 at 8.56.50 PM.png" alt="code" />
-              <img class="screenshot" src="images/Screenshot 2022-12-29 at 9.02.32 PM.png" alt="browser" />
-              <br />
-              And since I was on a roll, I added to my amigurumi store the capability for a user to filter the category
-              of available products. When I get to my frontend, I'll need to figure out how to create a button or form
-              to intake the query parameters.
-              <img class="screenshot" src="images/Screenshot 2022-12-29 at 6.39.55 PM.png" alt="code" />
-              <br />
-              Started figuring out how to use info from a CSV file - a common format for a lot of data. Fortunately,
-              Ruby is ready for this and all we need to do is use that built-in functionality with a loop instructing
-              Rails how to pull the data into the database (credit to
-              <a href="https://itnext.io/how-to-seed-a-rails-database-with-a-csv-file-105a7ba0e88c" target="_blank">
-                this Medium article
-              </a>
-              .)
+                <h4 id="learnings">Learnings</h4>
 
-              <h4 id="learnings">Learnings</h4>
-
-              Finished THM's Advent of Cyber!
-              <img class="screenshot" src="images/Advent_of_Cyber_2022.png" alt="AoC certificate" />
-              <br />
-              So I picked back up with building open-source research skills. Interestingly, as I was practicing
-              filtering search results (e.g., site: bbc.co.uk gchq news filetype:pdf or intitle:index.of), Google hit me
-              with a CAPTCHA to make sure I wasn't a robot or malicious software &#128566;.
-              <br />
+                Finished THM's Advent of Cyber!
+                <img class="screenshot" src="images/Advent_of_Cyber_2022.png" alt="AoC certificate" />
+                <br />
+                So I picked back up with building open-source research skills. Interestingly, as I was practicing
+                filtering search results (e.g., site: bbc.co.uk gchq news filetype:pdf or intitle:index.of), Google hit
+                me with a CAPTCHA to make sure I wasn't a robot or malicious software &#128566;.
+                <br />
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Dec3522" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  25 December 2022
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                <a href="https://www.nytimes.com/2022/12/09/us/inaturalist-nature-app.html" target="_blank">
+                  The Nicest Place Online? It Might Just Involve Identifying Sea Slugs.
+                </a>
+
+                <h4 id="Craftings">Craftings</h4>
+
+                Made progress on the full-stack news app. I added users, sessions, and authentication to the Rails
+                backend and corresponding authentication to the React frontend. The backend has POST routes for users
+                and sessions and logs them in with JSON Web Tokens (JWTs), which are then added to the axios default
+                headers and retained in the browser's local storage.
                 <br />
-                25 December 2022
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                I also imported bootstrap and zhuzed it up a bit! I used modals for the signup and login features
+                because modal windows offer better speed than creating new pages.
+                <br />
+                <br />
+                <img
+                  class="screenshot"
+                  src="images/Screenshot 2022-12-19 at 5.33.56 PM.png"
+                  alt="screenshot of a news app"
+                />
+                <br />
+                <br />
+                Separately, I added rock paper scissors to my choose-your-own-adventure game, and now I need to think
+                through whether it's just a nice detour or if there should be points that mean something if you win. I
+                also need to think through my overall gameplay a bit if I want to keep this an educational game; it's
+                definitely harder to write than a monster-slaying, cavern-escaping game.
 
-              <a href="https://www.nytimes.com/2022/12/09/us/inaturalist-nature-app.html" target="_blank">
-                The Nicest Place Online? It Might Just Involve Identifying Sea Slugs.
-              </a>
+                <h4 id="learnings">Learnings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
-
-              Made progress on the full-stack news app. I added users, sessions, and authentication to the Rails backend
-              and corresponding authentication to the React frontend. The backend has POST routes for users and sessions
-              and logs them in with JSON Web Tokens (JWTs), which are then added to the axios default headers and
-              retained in the browser's local storage.
-              <br />
-              <br />
-              I also imported bootstrap and zhuzed it up a bit! I used modals for the signup and login features because
-              modal windows offer better speed than creating new pages.
-              <br />
-              <br />
-              <img
-                class="screenshot"
-                src="images/Screenshot 2022-12-19 at 5.33.56 PM.png"
-                alt="screenshot of a news app"
-              />
-              <br />
-              <br />
-              Separately, I added rock paper scissors to my choose-your-own-adventure game, and now I need to think
-              through whether it's just a nice detour or if there should be points that mean something if you win. I
-              also need to think through my overall gameplay a bit if I want to keep this an educational game; it's
-              definitely harder to write than a monster-slaying, cavern-escaping game.
-
-              <h4 id="learnings">Learnings</h4>
-
-              THM's Advent of Cyber started off strong this week with an intro to hardware hacking! We used a logic
-              analyzer to examine the signals traveling between devices, and we learned about protocols for transmitting
-              data: USART (serial communication), SPI (which separates the clock from the data line and so has an extra
-              wire compared to USART, but is faster and more reliable), and I2C (which was created to mitigate the
-              drawbacks of both USART and SPI - over a thousand devices can be connected to the same two lines). Without
-              protocols, we'd need an unfathomable number of wires to transmit the binary representation of each
-              <a href="https://www.asciitable.com/" target="_blank">ASCII character</a>
-              ).
-              <br />
-              <br />
-              Then we had fun with IoT devices, which of course are uniquely vulnerable because they typically must be
-              lightweight, without human-enabled authentication (like a manually typed password), and designed to all be
-              interconnected. Security is often at best a secondary consideration. IoT devices typically rely on
-              middleware to support their messaging protocol, such as MQTT, CoAP, AMQP, or DDS. (And then I had a little
-              moment of panic where I realized I didn't fully understand what a port is...it's just a virtual point
-              where network connections start and end, software-based and managed by a computer's OS.) And we
-              interpreted some device source code to figure out its expected behavior so we could send a message and
-              change its behavior - which required puzzling out some JSON hashes!
+                THM's Advent of Cyber started off strong this week with an intro to hardware hacking! We used a logic
+                analyzer to examine the signals traveling between devices, and we learned about protocols for
+                transmitting data: USART (serial communication), SPI (which separates the clock from the data line and
+                so has an extra wire compared to USART, but is faster and more reliable), and I2C (which was created to
+                mitigate the drawbacks of both USART and SPI - over a thousand devices can be connected to the same two
+                lines). Without protocols, we'd need an unfathomable number of wires to transmit the binary
+                representation of each
+                <a href="https://www.asciitable.com/" target="_blank">ASCII character.</a>
+                <br />
+                <br />
+                Then we had fun with IoT devices, which of course are uniquely vulnerable because they typically must be
+                lightweight, without human-enabled authentication (like a manually typed password), and designed to all
+                be interconnected. Security is often at best a secondary consideration. IoT devices typically rely on
+                middleware to support their messaging protocol, such as MQTT, CoAP, AMQP, or DDS. (And then I had a
+                little moment of panic where I realized I didn't fully understand what a port is...it's just a virtual
+                point where network connections start and end, software-based and managed by a computer's OS.) And we
+                interpreted some device source code to figure out its expected behavior so we could send a message and
+                change its behavior - which required puzzling out some JSON hashes!
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Dec1822" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  18 December 2022
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                &#11088;
+                <a
+                  href="https://open.spotify.com/episode/4sDylBXvC2GyFy0Adlgy7a?si=LVvzUkJaTYaaJ_dhbiLmiQ&nd=1"
+                  target="_blank"
+                >
+                  Darknet Diaries episode 126: REvil
+                </a>
                 <br />
-                18 December 2022
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                <a
+                  href="https://arstechnica.com/information-technology/2022/12/fubotv-says-criminal-cyber-attack-caused-outage-during-world-cup-semifinals/"
+                  target="_blank"
+                >
+                  FuboTV goes kaput during World Cup semifinals, blames “criminal cyber attack”
+                </a>
 
-              &#11088;
-              <a
-                href="https://open.spotify.com/episode/4sDylBXvC2GyFy0Adlgy7a?si=LVvzUkJaTYaaJ_dhbiLmiQ&nd=1"
-                target="_blank"
-              >
-                Darknet Diaries episode 126: REvil
-              </a>
-              <br />
-              <br />
-              <a
-                href="https://arstechnica.com/information-technology/2022/12/fubotv-says-criminal-cyber-attack-caused-outage-during-world-cup-semifinals/"
-                target="_blank"
-              >
-                FuboTV goes kaput during World Cup semifinals, blames “criminal cyber attack”
-              </a>
+                <h4 id="Craftings">Craftings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
+                I connected a backend API with a frontend that displays on a webpage! The primary trick was making sure
+                that my backend renders
+                <em>only</em>
+                what I want to display on my webpage.
+                <br />
+                <br />
+                Changing the terminal game I built last week from a demo helped me better understand how its unfamiliar
+                code works. For example, the RNG generator uses Ruby's upto function to deploy different numbers of dice
+                for different scenarios. So, if we have 2 dice, we'll run the loop twice, but if we have 3, we'll run it
+                thrice:
+                <code class="codespan">1.upto(number_of_dice) do</code>
+                . I did, however, manage to break the gameplay... &#128539;
+                <p>And! Finally finished this little dragon! Time to send him off to an excited little baby!</p>
+                <img class="small-screenshot" src="images/IMG_0865.jpeg" alt="crochet" />
 
-              I connected a backend API with a frontend that displays on a webpage! The primary trick was making sure
-              that my backend renders
-              <em>only</em>
-              what I want to display on my webpage.
-              <br />
-              <br />
-              Changing the terminal game I built last week from a demo helped me better understand how its unfamiliar
-              code works. For example, the RNG generator uses Ruby's upto function to deploy different numbers of dice
-              for different scenarios. So, if we have 2 dice, we'll run the loop twice, but if we have 3, we'll run it
-              thrice:
-              <code class="codespan">1.upto(number_of_dice) do</code>
-              . I did, however, manage to break the gameplay... &#128539;
-              <p>And! Finally finished this little dragon! Time to send him off to an excited little baby!</p>
-              <img class="small-screenshot" src="images/IMG_0865.jpeg" alt="crochet" />
-
-              <h4 id="learnings">Learnings</h4>
-              We did a lot during this week's THM Advent of Cyber challenges. We dove into malware's classic patterns,
-              like establishing network connections, using registry keys, and downloading/creating files. We tackled the
-              layers of defense necessary to secure file uploads and user inputs on a web app by learning about file
-              extension validation, file size validation, file renaming, and malware scanning and by practicing (in PHP)
-              wrapping GET requests in a function that converts the input to an integer and using a prepared statement
-              for our search function to separate the syntax of our SQL sentence from our WHERE parameters for file
-              content validation.
-              <br />
-              <br />
-              We also learned about the
-              <a href="https://owasp.org/Top10/" target="_blank">OWASP Top 10 list</a>
-              - specifically IDOR vulnerabilities (where a user can manipulate poor access control to bypass
-              authorization). And we used industry tools like Wireshark to conduct traffic and packet analysis, which is
-              the process of extracting, assessing, and identifying network patterns such as connections, shares,
-              commands and other network activities, like logins, and system failures, from prerecorded traffic files).
-              And we learned a few Sigma rules to analyze logs and detect threats.
-              <br />
-              <br />
-              And, of course,
-              <a href="https://regexone.com/">regexes</a>
-              returned! Regexes, combined with HTML's built-in features, give us pretty granular control over user
-              input. For example,
-              <code class="codespan">input type="text" id="uname" name="uname" pattern="[a-zA-Z0-9]+"</code>
-              will filter for a case-insensitive alphanumeric string.
-              <br />
-              <br />
-              I have really appreciated
-              <a href="https://www.youtube.com/@alh4zr3d3/featured" target="_blank">Alh4zr3d's</a>
-              and
-              <a href="https://www.youtube.com/@InsiderPhD/featured" target="_blank">InsiderPhD's</a>
-              walkthroughs for the THM challenges - check them out! (I even opened up Twitch for the first time to see
-              <a href="https://www.twitch.tv/alh4zr3d/about" target="_blank">Alh4zr3d's content</a>
-              there.)
+                <h4 id="learnings">Learnings</h4>
+                We did a lot during this week's THM Advent of Cyber challenges. We dove into malware's classic patterns,
+                like establishing network connections, using registry keys, and downloading/creating files. We tackled
+                the layers of defense necessary to secure file uploads and user inputs on a web app by learning about
+                file extension validation, file size validation, file renaming, and malware scanning and by practicing
+                (in PHP) wrapping GET requests in a function that converts the input to an integer and using a prepared
+                statement for our search function to separate the syntax of our SQL sentence from our WHERE parameters
+                for file content validation.
+                <br />
+                <br />
+                We also learned about the
+                <a href="https://owasp.org/Top10/" target="_blank">OWASP Top 10 list</a>
+                - specifically IDOR vulnerabilities (where a user can manipulate poor access control to bypass
+                authorization). And we used industry tools like Wireshark to conduct traffic and packet analysis, which
+                is the process of extracting, assessing, and identifying network patterns such as connections, shares,
+                commands and other network activities, like logins, and system failures, from prerecorded traffic
+                files). And we learned a few Sigma rules to analyze logs and detect threats.
+                <br />
+                <br />
+                And, of course,
+                <a href="https://regexone.com/">regexes</a>
+                returned! Regexes, combined with HTML's built-in features, give us pretty granular control over user
+                input. For example,
+                <code class="codespan">input type="text" id="uname" name="uname" pattern="[a-zA-Z0-9]+"</code>
+                will filter for a case-insensitive alphanumeric string.
+                <br />
+                <br />
+                I have really appreciated
+                <a href="https://www.youtube.com/@alh4zr3d3/featured" target="_blank">Alh4zr3d's</a>
+                and
+                <a href="https://www.youtube.com/@InsiderPhD/featured" target="_blank">InsiderPhD's</a>
+                walkthroughs for the THM challenges - check them out! (I even opened up Twitch for the first time to see
+                <a href="https://www.twitch.tv/alh4zr3d/about" target="_blank">Alh4zr3d's content</a>
+                there.)
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Dec1122" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  11 December 2022
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                <a
+                  href="https://www.npr.org/sections/pictureshow/2022/12/10/1141604273/comedy-wildlife-photography-awards-funny-animals-photos"
+                  target="_blank"
+                >
+                  We're not lion: The 2022 Comedy Wildlife Photography Awards are a good laugh
+                </a>
                 <br />
-                11 December 2022
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                <a
+                  href="https://arstechnica.com/information-technology/2022/12/advanced-botnet-taken-down-by-an-all-too-human-flaw-syntax-error/"
+                  target="_blank"
+                >
+                  Syntax errors are the doom of us all, including botnet authors
+                </a>
+                <br />
+                <br />
+                <a
+                  href="https://www.nytimes.com/2022/12/04/business/chess-cheating-scandal-magnus-carlsen-hans-niemann.html?smid=url-share"
+                  target="_blank"
+                >
+                  He's the Bad Boy of Chess. But Did He Cheat?
+                </a>
 
-              <a
-                href="https://www.npr.org/sections/pictureshow/2022/12/10/1141604273/comedy-wildlife-photography-awards-funny-animals-photos"
-                target="_blank"
-              >
-                We're not lion: The 2022 Comedy Wildlife Photography Awards are a good laugh
-              </a>
-              <br />
-              <br />
-              <a
-                href="https://arstechnica.com/information-technology/2022/12/advanced-botnet-taken-down-by-an-all-too-human-flaw-syntax-error/"
-                target="_blank"
-              >
-                Syntax errors are the doom of us all, including botnet authors
-              </a>
-              <br />
-              <br />
-              <a
-                href="https://www.nytimes.com/2022/12/04/business/chess-cheating-scandal-magnus-carlsen-hans-niemann.html?smid=url-share"
-                target="_blank"
-              >
-                He's the Bad Boy of Chess. But Did He Cheat?
-              </a>
+                <h4 id="Craftings">Craftings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
+                I followed a
+                <a href="https://youtu.be/wMJ6lxgT-mE" target="_blank">great demo</a>
+                to create a simple terminal-based adventure game. It was an excellent introduction to thinking through
+                gameplay and I'm excited to build on it next week.
 
-              I followed a
-              <a href="https://youtu.be/wMJ6lxgT-mE" target="_blank">great demo</a>
-              to create a simple terminal-based adventure game. It was an excellent introduction to thinking through
-              gameplay and I'm excited to build on it next week.
+                <br />
+                <img class="small-screenshot" src="images/Screenshot 2022-12-08 at 6.00.25 PM.png" />
 
-              <br />
-              <img class="small-screenshot" src="images/Screenshot 2022-12-08 at 6.00.25 PM.png" />
+                <h4 id="learnings">Learnings</h4>
 
-              <h4 id="learnings">Learnings</h4>
-
-              On Day 10 of THM's Advent of Cyber, I learned about Cetus, a browser plugin that's designed to help find
-              and alter the data your computer stores in its memory for some games. On Day 11, I practiced using an
-              open-source memory forensics toolkit written in Python called Volatility to analyze dumps of volatile
-              memory - the memory that's in use when a computer is powered on, like your clipboard or unsaved files - to
-              see what malware was doing at a particular point in time.
-              <br />
-              <br />
-              I've been working on a terminal to-do app, and to create my incomplete tasks array I learned about Ruby's
-              .select method. Turns out using .select on an array always creates a new array (therefore rendering
-              unnecessary my first attempt with a blank array and a conditional statement). Select is great when you
-              want to filter a list and return an array with the results:
-              <code class="codespan">@tasks.select { |task| !task.completed }</code>
-              .
-              <br />
-              <br />
-              Day 8 of THM's Advent of Cyber tackled smart contracts... which are only as smart (and as secure) as their
-              programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract exploits
-              flawed logic by using a fallback function to continue depleting a contract's total balance. This was my
-              first encounter with Solidity, an OOP language created specifically for smart contracts on blockchain
-              platforms.
-              <br />
-              <br />
-              I was trying to validate ISBNs and needed to make sure that the string contained only digits until the
-              last character. And lo, my first regex (regexp?):
-              <code class="codespan">/\D/.match(isbn_string.chop)</code>
-              .
-              <br />
-              <br />
-              And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we
-              extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to
-              suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find
-              and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere. (To
-              be fair, I did unknowingly encounter them earlier with
-              <code class="codespan">grep</code>
-              -- which, turns out, stands for global/regular expression/print. Here's a nifty
-              <a href="https://swcarpentry.github.io/shell-novice/07-find/index.html" target="_blank">link</a>
-              about finding things using the command line.)
-              <br />
+                On Day 10 of THM's Advent of Cyber, I learned about Cetus, a browser plugin that's designed to help find
+                and alter the data your computer stores in its memory for some games. On Day 11, I practiced using an
+                open-source memory forensics toolkit written in Python called Volatility to analyze dumps of volatile
+                memory - the memory that's in use when a computer is powered on, like your clipboard or unsaved files -
+                to see what malware was doing at a particular point in time.
+                <br />
+                <br />
+                I've been working on a terminal to-do app, and to create my incomplete tasks array I learned about
+                Ruby's .select method. Turns out using .select on an array always creates a new array (therefore
+                rendering unnecessary my first attempt with a blank array and a conditional statement). Select is great
+                when you want to filter a list and return an array with the results:
+                <code class="codespan">@tasks.select { |task| !task.completed }</code>
+                .
+                <br />
+                <br />
+                Day 8 of THM's Advent of Cyber tackled smart contracts... which are only as smart (and as secure) as
+                their programmed logic. A common vulnerability is re-entrancy, which occurs when a malicious contract
+                exploits flawed logic by using a fallback function to continue depleting a contract's total balance.
+                This was my first encounter with Solidity, an OOP language created specifically for smart contracts on
+                blockchain platforms.
+                <br />
+                <br />
+                I was trying to validate ISBNs and needed to make sure that the string contained only digits until the
+                last character. And lo, my first regex (regexp?):
+                <code class="codespan">/\D/.match(isbn_string.chop)</code>
+                .
+                <br />
+                <br />
+                And then! On Day 7 of THM's Advent of Cyber, we practiced examining a malicious attachment. Once we
+                extracted the ASCII and Unicode-printable sequences, we looked for embedded strings that could lead to
+                suspicious domains. But of course the attacker tried to obfuscate their code, so we used a regex to find
+                and remove some repeated characters. I guess once you start looking, regex (regexes?) are everywhere.
+                (To be fair, I did unknowingly encounter them earlier with
+                <code class="codespan">grep</code>
+                -- which, turns out, stands for global/regular expression/print. Here's a nifty
+                <a href="https://swcarpentry.github.io/shell-novice/07-find/index.html" target="_blank">link</a>
+                about finding things using the command line.)
+                <br />
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Dec0422" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  4 December 2022
+                </h3>
+                <h4 id="readings">Readings & Listenings</h4>
+
+                <a
+                  href="https://medium.com/dfrlab/analyzing-the-volume-of-kremlin-narratives-targeting-the-spanish-speaking-world-38da532d74ba"
+                  target="_blank"
+                >
+                  Analyzing the volume of Kremlin narratives targeting the Spanish-speaking world
+                </a>
                 <br />
-                4 December 2022
-              </h3>
-              <h4 id="readings">Readings & Listenings</h4>
+                <br />
+                <a
+                  href="https://blog.confiant.com/cashrewindo-how-to-age-domains-for-an-investment-scam-like-fine-scotch-a48d22788c84"
+                  target="_blank"
+                >
+                  CashRewindo: How to age domains for an investment scam like fine scotch
+                </a>
 
-              <a
-                href="https://medium.com/dfrlab/analyzing-the-volume-of-kremlin-narratives-targeting-the-spanish-speaking-world-38da532d74ba"
-                target="_blank"
-              >
-                Analyzing the volume of Kremlin narratives targeting the Spanish-speaking world
-              </a>
-              <br />
-              <br />
-              <a
-                href="https://blog.confiant.com/cashrewindo-how-to-age-domains-for-an-investment-scam-like-fine-scotch-a48d22788c84"
-                target="_blank"
-              >
-                CashRewindo: How to age domains for an investment scam like fine scotch
-              </a>
+                <h4 id="Craftings">Craftings</h4>
 
-              <h4 id="Craftings">Craftings</h4>
+                Made a simple terminal app! It uses a number of tty gems for beautification and a few different free
+                APIs to generate the data.
+                <a href="https://github.com/sararsaurus/terminal-api-apps" target="_blank">Check it out on GitHub.</a>
 
-              Made a simple terminal app! It uses a number of tty gems for beautification and a few different free APIs
-              to generate the data.
-              <a href="https://github.com/sararsaurus/terminal-api-apps" target="_blank">Check it out on GitHub.</a>
+                <br />
+                <br />
+                <img class="screenshot" src="images/Screenshot 2022-11-29 at 2.41.27 PM.png" />
+                <br />
+                I tackled my scraping project again, but I haven't figured out how to get the data I really want. I'm
+                trying to collect the trails for the Indian Peaks Wilderness Area, where I patrol as a US Forest Service
+                volunteer. A state website has the KMZ for all trails in CO, so I was able to convert that to a ZIP file
+                and extract the KML file that I could then open in Google Earth. BUT I haven't yet figured out how to
+                extract only the information I want.
+                <br />
+                <br />
+                I tried using
+                <code class="codespan">nokogiri</code>
+                because my KML file is actually primarily composed of XML and HTML. I tested my code to print the doc to
+                the terminal and for some reason it only pulled a small portion. It did, interestingly, include more
+                DOM-like features than were visible in the KML file I was working with in in TextEdit.
 
-              <br />
-              <br />
-              <img class="screenshot" src="images/Screenshot 2022-11-29 at 2.41.27 PM.png" />
-              <br />
-              I tackled my scraping project again, but I haven't figured out how to get the data I really want. I'm
-              trying to collect the trails for the Indian Peaks Wilderness Area, where I patrol as a US Forest Service
-              volunteer. A state website has the KMZ for all trails in CO, so I was able to convert that to a ZIP file
-              and extract the KML file that I could then open in Google Earth. BUT I haven't yet figured out how to
-              extract only the information I want.
-              <br />
-              <br />
-              I tried using
-              <code class="codespan">nokogiri</code>
-              because my KML file is actually primarily composed of XML and HTML. I tested my code to print the doc to
-              the terminal and for some reason it only pulled a small portion. It did, interestingly, include more
-              DOM-like features than were visible in the KML file I was working with in in TextEdit.
+                <h4 id="learnings">Learnings</h4>
 
-              <h4 id="learnings">Learnings</h4>
-
-              Starting TryHackMe's
-              <a
-                href="https://tryhackme.com/christmas?utm_source=email&utm_medium=email&utm_campaign=aoc4&utm_id=aoc4"
-                target="_blank"
-              >
-                Advent of Cyber
-              </a>
-              ! We'll complete a task each day of the month and cover red teaming, cyber investigations, web
-              exploitation, IoT hacking, and cyber defense &#127873; &#127876;. On Day 2, I learned how to use
-              <code class="codespan">nano</code>
-              to get a sense for the data in a log file,
-              <code class="codespan">wc -l</code>
-              to get the number of lines in it, and
-              <code class="codespan">grep</code>
-              , which finds and prints lines that match a pattern, to search.
-              <br />
-              <br />
-              Day 3 was all about OSINT techniques like google dorking, which is using advanced search terms to locate
-              specific file types, versions, text, and more; checking the WHOIS information of a website; evaluating the
-              robots.txt file; and searching GitHub repos.
-              <br />
-              <br />
-              I was trying to write code that could tell if a string was all uppercase AND devoid of letters, and I was
-              surprised to see that a fully numeric string was interpreted as uppercase. I eventually settled with
-              <code class="codespan">
-                elsif sentence == sentence.upcase && sentence.include?("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-              </code>
-              but there's gotta be a better way.
-              <br />
-              <br />
-              I think I may have found that better way. But first, an apparently famous joke:
-              <em>
-                "Some people, when confronted with a problem, think 'I know, I'll use regular expressions.' Now they
-                have two problems."
-              </em>
+                Starting TryHackMe's
+                <a
+                  href="https://tryhackme.com/christmas?utm_source=email&utm_medium=email&utm_campaign=aoc4&utm_id=aoc4"
+                  target="_blank"
+                >
+                  Advent of Cyber
+                </a>
+                ! We'll complete a task each day of the month and cover red teaming, cyber investigations, web
+                exploitation, IoT hacking, and cyber defense &#127873; &#127876;. On Day 2, I learned how to use
+                <code class="codespan">nano</code>
+                to get a sense for the data in a log file,
+                <code class="codespan">wc -l</code>
+                to get the number of lines in it, and
+                <code class="codespan">grep</code>
+                , which finds and prints lines that match a pattern, to search.
+                <br />
+                <br />
+                Day 3 was all about OSINT techniques like google dorking, which is using advanced search terms to locate
+                specific file types, versions, text, and more; checking the WHOIS information of a website; evaluating
+                the robots.txt file; and searching GitHub repos.
+                <br />
+                <br />
+                I was trying to write code that could tell if a string was all uppercase AND devoid of letters, and I
+                was surprised to see that a fully numeric string was interpreted as uppercase. I eventually settled with
+                <code class="codespan">
+                  elsif sentence == sentence.upcase && sentence.include?("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+                </code>
+                but there's gotta be a better way.
+                <br />
+                <br />
+                I think I may have found that better way. But first, an apparently famous joke:
+                <em>
+                  "Some people, when confronted with a problem, think 'I know, I'll use regular expressions.' Now they
+                  have two problems."
+                </em>
+              </li>
             </div>
           </div>
 
           <div class="card">
             <div id="Nov2022" class="TIL">
-              <h3>
-                Weekly(ish) Roundup
+              <li class="words">
+                <h3>
+                  Weekly(ish) Roundup
+                  <br />
+                  20 November 2022
+                </h3>
+
+                <h4 id="readings">Readings & Listenings</h4>
+
+                <a
+                  href="https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/"
+                  target="_blank"
+                >
+                  The Untold Story of NotPetya, the Most Devastating Cyberattack in History
+                </a>
+                <a
+                  href="https://www.theringer.com/soccer/2022/11/15/23460575/2022-world-cup-dark-horse"
+                  target="_blank"
+                >
+                  Where Will the World Cup Dark Horses Come From?
+                </a>
+                <h4 id="learnings">Learnings</h4>
+
+                Carefully creating sessions and tokens when building your app is key to preventing Cross-Site Request
+                Forgery (CSRF) attacks. Input sanitization, particularly the removal of necessary coding characters and
+                dangerous keywords, is important to defending against Cross-Site Scripting (XSS).
                 <br />
-                20 November 2022
-              </h3>
-
-              <h4 id="readings">Readings & Listenings</h4>
-
-              <a
-                href="https://www.wired.com/story/notpetya-cyberattack-ukraine-russia-code-crashed-the-world/"
-                target="_blank"
-              >
-                The Untold Story of NotPetya, the Most Devastating Cyberattack in History
-              </a>
-              <a href="https://www.theringer.com/soccer/2022/11/15/23460575/2022-world-cup-dark-horse" target="_blank">
-                Where Will the World Cup Dark Horses Come From?
-              </a>
-              <h4 id="learnings">Learnings</h4>
-
-              Carefully creating sessions and tokens when building your app is key to preventing Cross-Site Request
-              Forgery (CSRF) attacks. Input sanitization, particularly the removal of necessary coding characters and
-              dangerous keywords, is important to defending against Cross-Site Scripting (XSS).
-              <br />
-              <br />
-              Getting at the key of a hash is tricky, but Ruby's
-              <a href="https://www.rubyguides.com/ruby-tutorial/loops/" target="_blank">each method</a>
-              helpfully offers an easy way to access it in a loop!
-              <br />
-              <code class="codespan">
-                items = { "chair" => 100, "book" => 14 } hash = {} items.each do |name, price| hash[name] = price end p
-                hash # {"chair"=>100, "book"=>14}
-              </code>
+                <br />
+                Getting at the key of a hash is tricky, but Ruby's
+                <a href="https://www.rubyguides.com/ruby-tutorial/loops/" target="_blank">each method</a>
+                helpfully offers an easy way to access it in a loop!
+                <br />
+                <code class="codespan">
+                  items = { "chair" => 100, "book" => 14 } hash = {} items.each do |name, price| hash[name] = price end
+                  p hash # {"chair"=>100, "book"=>14}
+                </code>
+              </li>
             </div>
           </div>
           <div class="card">
             <div id="Nov0422" class="TIL">
-              <h3>
-                Beginnings
-                <br />
-                4 November 2022
-              </h3>
-              <figure>
-                <blockquote>
-                  <p>
-                    Computers may be as close as we get to magic in the real world: we type incantations into a machine,
-                    and — if the incantations are right — the machine does our bidding. To perform such magic, computer
-                    witches and wizards rely not only on words, but also on wands, potions, and an ancient tome or two.
-                    Taken together, these tricks of the trade are known as software development: computer programming,
-                    plus tools like command lines, text editors, and version control.
-                  </p>
-                </blockquote>
-                <figcaption>
-                  - Michael Hartl,
-                  <cite>
-                    <a href="https://www.learnenough.com/command-line-tutorial" target="_blank">
-                      Learn Enough Command Line to Be Dangerous
-                    </a>
-                  </cite>
-                </figcaption>
-              </figure>
+              <li class="words">
+                <h3>
+                  Beginnings
+                  <br />
+                  4 November 2022
+                </h3>
+                <figure>
+                  <blockquote>
+                    <p>
+                      Computers may be as close as we get to magic in the real world: we type incantations into a
+                      machine, and — if the incantations are right — the machine does our bidding. To perform such
+                      magic, computer witches and wizards rely not only on words, but also on wands, potions, and an
+                      ancient tome or two. Taken together, these tricks of the trade are known as software development:
+                      computer programming, plus tools like command lines, text editors, and version control.
+                    </p>
+                  </blockquote>
+                  <figcaption>
+                    - Michael Hartl,
+                    <cite>
+                      <a href="https://www.learnenough.com/command-line-tutorial" target="_blank">
+                        Learn Enough Command Line to Be Dangerous
+                      </a>
+                    </cite>
+                  </figcaption>
+                </figure>
+              </li>
             </div>
           </div>
         </ul>
