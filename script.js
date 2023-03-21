@@ -37,7 +37,6 @@ function search_word() {
       x[i].style.display = "none";
     } else {
       x[i].style.display = "list-item";
-      // input.style.color = "red";
     }
   }
 }
