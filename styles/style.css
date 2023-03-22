@@ -97,7 +97,7 @@ blockquote p::after {
 
 .entry {
   text-align: center;
-  border: thick solid deeppink;
+  border: thick solid #D96716;
   padding: 0px 20px 20px 20px;
   margin-top: 50px;
 }
@@ -109,7 +109,7 @@ h3 {
 
 .TIL {
   text-align: left;
-  border: thick solid deeppink;
+  border: thick solid #D96716;
   padding: 0px 20px 20px 20px;
   margin-top: 50px;
 }
