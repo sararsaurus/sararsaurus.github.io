@@ -121,18 +121,32 @@
                 </h3>
                 <h4 id="cybersecurity">THM</h4>
                 <p>
-                  The
+                  Back to cyber defense! The
                   <a href="http://detect-respond.blogspot.com/2013/03/the-pyramid-of-pain.html" target="_blank">
                     Pyramid of Pain
                   </a>
-                  is a diagram that "shows the relationship between the types of indicators you might use to detect an
-                  adversary's activities and how much pain it will cause them when you are able to deny those indicators
-                  to them."
-                  <ul>
-                    <li>Hash values (each hash value is a numeric value of a fixed length that uniquely identifies data and is the result of a hashing algorithm, such as MD5, SHA-1, and SHA-2. ) form the base of the pyramid, meaning that 1. finding hash values is an indicator of malicious activity and 2. disrupting an adversary's hash values will inflict trivial pain. These hashes can reflect a malware sample or a malicious file and can be used as a way to uniquely identify and reference a malicious artifact.Various online tools can be used to do hash lookups like VirusTotal and Metadefender Cloud - OPSWAT. But, it's so easy for hash values to change, and there are so many of them around, that in many cases it may not even be worth tracking them. </li>
-                  </ul>
+                  is a diagram created in 2013 that "shows the relationship between the types of indicators you might
+                  use to detect an adversary's activities and how much pain it will cause them when you are able to deny
+                  those indicators to them."
                   <br />
-                  Step 1: Identify a questionable IP address alerted in a security monitoring tool.
+                  <img src="images/Pyramid of Pain v2.png" alt="Pyramid of Pain" />
+                  <br />
+                  A
+                  <strong>hash value</strong>
+                  is a numeric value of a fixed length that uniquely identifies data and is the result of a hashing
+                  algorithm, such as MD5, SHA-1, and SHA-2. Hash values form the base of the pyramid, meaning that
+                  finding hash values is an indicator of malicious activity and that disrupting an adversary's hash
+                  values will inflict trivial pain to them. These hashes can reflect a malware sample or a malicious
+                  file and can be used as a way to uniquely identify and reference a malicious artifact, and various
+                  online tools can be used look up a hash, like VirusTotal and Metadefender Cloud-OPSWAT. But, it's so
+                  easy for an adversary to change a hash value, and there are so many of them around, that in many cases
+                  it may not even be worth tracking them.
+
+                  <br />
+                  <br />
+                  IP addresses are used to identify any device (a desktop computer, a server, a CCTV camera, etc)
+                  connected to a network Step 1: Identify a questionable IP address alerted in a security monitoring
+                  tool.
                   <br />
                   Step 2: Look up the IP address. There are many open-source databases out there like AbuseIPDB, Cisco
                   Talos Intelligence, where you can perform a reputation and location check for the IP address. You can
