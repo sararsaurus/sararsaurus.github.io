@@ -132,10 +132,56 @@
                   </a>
                   in 2011 by Lockheed Martin, is designed for identification and prevention of the network intrusions;
                   it's essentially the spiritual precursor for the MITRE ATT&CK framework. To succeed, an adversary
-                  needs to go through all phases of the Cyber Kill Chain, and consequently, it helps defenders assess
+                  needs to go through all phases of the Cyber Kill Chain, and so the framework helps defenders assess
                   their networks and system security by identifying missing controls and closing gaps - and it helps
                   defenders recognize intrusion attempts and adversary goals.
                 </p>
+                <br />
+                <br />
+                <ol>
+                  <li>
+                    Reconnaissance - Research, identification and selection of targets, often represented as crawling
+                    Internet websites such as conference proceedings and mailing lists for email addresses, social
+                    relationships, or information on specific technologies.
+                  </li>
+                  <li>
+                    Weaponization - Coupling a remote access trojan with an exploit into a deliverable payload,
+                    typically by means of an automated tool (weaponizer). Increasingly, client application data files
+                    such as Adobe Portable Document Format (PDF) or Microsoft Office documents serve as the weaponized
+                    deliverable.
+                  </li>
+                  <li>
+                    Delivery - Transmission of the weapon to the targeted environment. The three most prevalent delivery
+                    vectors for weaponized payloads by APT actors, as observed by the Lockheed Martin Computer Incident
+                    Response Team (LM-CIRT) for the years 2004-2010, are email attachments, websites, and USB removable
+                    media.
+                  </li>
+                  <li>
+                    Exploitation - After the weapon is delivered to victim host, exploitation triggers intruders's code.
+                    Most often, exploitation targets an application or operating system vulnerability, but it could also
+                    more simply exploit the users themselves or leverage an operating system feature that auto-executes
+                    code.
+                  </li>
+                  <li>
+                    Installation - Installation of a remote access trojan or backdoor on the victim system allows the
+                    adversary to maintain persistence inside the environment.
+                  </li>
+                  <li>
+                    Command and Control (C2) - Typically, compromised hosts must beacon outbound to an Internet
+                    controller server to establish a C2 channel. APT malware especially requires manual interaction
+                    rather than conduct activity automatically. Once the C2 channel establishes, intruders have “hands
+                    on the keyboard” access inside the target environment.
+                  </li>
+                  <li>
+                    Actions on Objectives - Only now, after progressing through the first six phases, can intruders take
+                    actions to achieve their original objectives. Typically, this objective is data exfiltration which
+                    involves collecting, encrypting and extracting information from the victim environment; violations
+                    of data integrity or availability are potential objectives as well. Alternatively, the intruders may
+                    only desire access to the initial victim box for use as a hop point to compromise additional systems
+                    and move laterally inside the network.
+                  </li>
+                </ol>
+
                 <h5>The Pyramid of Pain</h5>
                 <p>
                   The
@@ -148,7 +194,7 @@
                   on from the attacker's or the defender's perspective and it doesn't compare like with like. It tries
                   to do too much and gets a little tangled.)
                   <br />
-                  <img src="images/Pyramid of Pain v2.png" alt="Pyramid of Pain" />
+                  <img class="screenshot" src="images/Pyramid of Pain v2.png" alt="Pyramid of Pain" />
                   <br />
                   A
                   <strong>hash value</strong>
@@ -470,7 +516,7 @@
                   instead:
                   <br />
                   <br />
-                  <img src="images/Screenshot 2023-03-10 at 2.31.07 PM.png" alt="code" />
+                  <img class="screenshot" src="images/Screenshot 2023-03-10 at 2.31.07 PM.png" alt="code" />
                   <br />
                   <br />
                   To work, DOMPurify needs to write HTML into the DOM element, so I had to add an
