@@ -117,7 +117,7 @@
                 <h3>
                   Weekly(ish) Roundup
                   <br />
-                  2 April 2023
+                  3 April 2023
                 </h3>
                 <h4 id="cybersecurity">THM</h4>
                 <p>
@@ -145,17 +145,22 @@
                   <br />
                   <strong>IP addresses</strong>
                   are used to identify any device (a desktop computer, a server, a CCTV camera, etc) connected to a
-                  network. Knowing an adversary's IP address is valuable, and defenders can block, drop, or deny
-                  particular inbound requests, but it's unfortunately again pretty trivial for an adversary to simply
-                  switch to a new IP address or use
+                  network. Knowing an adversary's IP address is valuable, and many open-source databases like Cisco
+                  Talos Intelligence, provide reputation and location checks for IP addresses. Defenders can block,
+                  drop, or deny particular inbound requests, but it's unfortunately again pretty trivial for an
+                  adversary to simply switch to a new IP address or use
                   <a href="https://unit42.paloaltonetworks.com/fast-flux-101/" target="_blank">Fast Flux,</a>
                   a DNS technique that makes identifying the communication between malware and its command-and-control
                   server challenging.
-                  <!-- Step 1: Identify a questionable IP address alerted in a security monitoring tool.
                   <br />
-                  Step 2: Look up the IP address. There are many open-source databases out there like AbuseIPDB, Cisco
-                  Talos Intelligence, where you can perform a reputation and location check for the IP address. You can
-                  also make the Internet safer by reporting the malicious IPs, for example, on AbuseIPDB. -->
+                  <br />
+                  <strong>Domain names</strong>
+                  are a bit more of a pain for an attacker to change, because they would most likely need to purchase
+                  and register the domain and modify DNS records. Attackers often try to hide malicious domains under
+                  URL shorteners or - less often because browsers are pretty good at unmasking - by using Puny code,
+                  which is a way of converting words that cannot be written in ASCII into a Unicode ASCII encoding. One
+                  way to see the actual website that a shortened link is redirecting you to is by appending "+" to the
+                  end in the browser search bar.
                 </p>
               </li>
             </div>
