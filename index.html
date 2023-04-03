@@ -127,7 +127,8 @@
                   </a>
                   is a diagram created in 2013 that "shows the relationship between the types of indicators you might
                   use to detect an adversary's activities and how much pain it will cause them when you are able to deny
-                  those indicators to them."
+                  those indicators to them." (Quite frankly, I think it gets itself confused about whether the pyramid
+                  on from the attacker's or the defender's perspective. It tries to do both and gets a little tangled.)
                   <br />
                   <img src="images/Pyramid of Pain v2.png" alt="Pyramid of Pain" />
                   <br />
@@ -155,12 +156,34 @@
                   <br />
                   <br />
                   <strong>Domain names</strong>
-                  are a bit more of a pain for an attacker to change, because they would most likely need to purchase
-                  and register the domain and modify DNS records. Attackers often try to hide malicious domains under
-                  URL shorteners or - less often because browsers are pretty good at unmasking - by using Puny code,
-                  which is a way of converting words that cannot be written in ASCII into a Unicode ASCII encoding. One
-                  way to see the actual website that a shortened link is redirecting you to is by appending "+" to the
-                  end in the browser search bar.
+                  are a bit more of a pain for an attacker to change because they would most likely need to purchase and
+                  register the domain and modify DNS records. The availability of DNS providers with lax registration
+                  standards and low costs make it relatively simple to change domain names. Attackers often try to hide
+                  malicious domains under URL shorteners or - less often because browsers are pretty good at unmasking -
+                  by using Puny code, which is a way of converting words that cannot be written in ASCII into a Unicode
+                  ASCII encoding. Fortunately, there are
+                  <a
+                    href="https://safecomputing.umich.edu/be-aware/phishing-and-suspicious-email/shortened-url-security"
+                    target="_blank"
+                  >
+                    ways
+                  </a>
+                  to preview the full url of a shortened url: by adding "preview" or "+" to the url or you can using a
+                  url checker.
+                  <br />
+                  <br />
+                  <strong>Host artifacts</strong>
+                  are the traces or observables that attackers leave on the system, such as registry values, suspicious
+                  process execution, attack patterns or IOCs, files dropped by malicious applications, or anything
+                  exclusive to the current threat.And a
+                  <strong>network artifact</strong>
+                  can be a user-agent string, C2 information, or URI patterns followed by the HTTP POST requests. A
+                  network artifact can be detected by packet-capture analysis (PCAPs) by using a network protocol
+                  analyzer or exploring IDS(intrusion detection system) logging.
+                  <strong>Tools</strong>
+                  are what they sound like: the tools used by defenders and adversaries. And finally,
+                  <strong>TTPs</strong>
+                  are the whole puzzle: if you can detect and respond to the TTPs, you're in good shape.
                 </p>
               </li>
             </div>
