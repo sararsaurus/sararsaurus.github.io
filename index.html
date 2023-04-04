@@ -140,21 +140,31 @@
                 <br />
                 <ol>
                   <li>
-                    Reconnaissance - Research, identification and selection of targets, often represented as crawling
-                    Internet websites such as conference proceedings and mailing lists for email addresses, social
-                    relationships, or information on specific technologies.
+                    Reconnaissance - Research, identification, and selection of targets, often represented as conducting
+                    OSINT to harvest emails and collect information on the target.
                   </li>
                   <li>
-                    Weaponization - Coupling a remote access trojan with an exploit into a deliverable payload,
-                    typically by means of an automated tool (weaponizer). Increasingly, client application data files
-                    such as Adobe Portable Document Format (PDF) or Microsoft Office documents serve as the weaponized
-                    deliverable.
+                    Weaponization - Combines malware and exploit into a deliverable payload, using an infected Word doc
+                    containing a malicious macro, for example. Most attackers use automated tools to generate the
+                    malware or purchase it on the dark web, although sophisticated actors or state-sponsored APTs would
+                    write their own custom malware.
+                    <ul>
+                      <li>
+                        Malware is a program or software that is designed to damage, disrupt, or gain unauthorized
+                        access to a computer.
+                      </li>
+                      <li>
+                        An exploit is a program or a code that takes advantage of the vulnerability or flaw in the
+                        application or system.
+                      </li>
+                    </ul>
                   </li>
                   <li>
                     Delivery - Transmission of the weapon to the targeted environment. The three most prevalent delivery
-                    vectors for weaponized payloads by APT actors, as observed by the Lockheed Martin Computer Incident
-                    Response Team (LM-CIRT) for the years 2004-2010, are email attachments, websites, and USB removable
-                    media.
+                    vectors for weaponized payloads that were observed by the Lockheed Martin Computer Incident Response
+                    Team (LM-CIRT) for the years 2004-2010 were email attachments, websites, and USB removable media.
+                    And that's probably still pretty accurate - although there are other innovations, like watering hole
+                    attacks that compromise a website and redirect users to a malicious one.
                   </li>
                   <li>
                     Exploitation - After the weapon is delivered to victim host, exploitation triggers intruders's code.
@@ -164,13 +174,33 @@
                   </li>
                   <li>
                     Installation - Installation of a remote access trojan or backdoor on the victim system allows the
-                    adversary to maintain persistence inside the environment.
+                    adversary to maintain persistence inside the environment. Attackers can achieve persistence by
+                    installing a
+                    <a
+                      href="https://www.microsoft.com/en-us/security/blog/2021/02/11/web-shell-attacks-continue-to-rise/"
+                      target="_blank"
+                    >
+                      web shell
+                    </a>
+                    on the server, which is a malicious script written in ASP, PHP, or JSP that can be difficult to
+                    detect; by installing a backdoor on the victim's machine by, for example, using
+                    <a href="https://www.offsec.com/metasploit-unleashed/meterpreter-backdoor/" target="_blank">
+                      Meterpreter;
+                    </a>
+                    by creating or modifying Windows services (technique T1543.003 on ATT&CK); or by adding the entry to
+                    the run keys for the malicious payload in the registry or startup folder (ATT&CK sub-technique
+                    T1547.001). And all the while, an attacker can use
+                    <a href="https://attack.mitre.org/techniques/T1070/006/" target="_blank">timestomping</a>
+                    to modify file time attributes.
                   </li>
                   <li>
                     Command and Control (C2) - Typically, compromised hosts must beacon outbound to an Internet
-                    controller server to establish a C2 channel. APT malware especially requires manual interaction
-                    rather than conduct activity automatically. Once the C2 channel establishes, intruders have “hands
-                    on the keyboard” access inside the target environment.
+                    controller server to establish a C2 channel. APT malware especially requires manual interaction.
+                    Once the C2 channel establishes, intruders have “hands on the keyboard” access inside the target
+                    environment. Currently, adversaries commonly use protocols HTTP on port 80 and HTTPS on port 443
+                    because this type of beaconing blends the malicious traffic with legitimate traffic and DNS
+                    tunneling where the infected machine makes constant DNS requests to the server that belongs to the
+                    attacker.
                   </li>
                   <li>
                     Actions on Objectives - Only now, after progressing through the first six phases, can intruders take
