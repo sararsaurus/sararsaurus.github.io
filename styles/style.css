@@ -156,7 +156,7 @@ input[type=text]:focus {
   .TIL {
     text-align: left;
     width: 100%;
-    border: thick solid deeppink;
+    border: thick solid #D96716;
     margin-top: 50px;
     font-size: small;
   }
